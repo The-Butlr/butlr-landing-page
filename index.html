@@ -217,8 +217,8 @@
   }
   /* ---------- hero live-demo panel ---------- */
   .hero-demo{
-    display:flex; gap:14px; flex-wrap:wrap; align-items:stretch;
-    max-width:660px; margin:48px auto 0;
+    display:flex; gap:14px; flex-wrap:wrap; align-items:stretch; justify-content:center;
+    max-width:420px; margin:48px auto 0;
     animation:fadeUp .7s ease .52s both;
   }
   .demo-chat{
@@ -251,20 +251,6 @@
   .demo-typing span:nth-child(2){animation-delay:.15s;}
   .demo-typing span:nth-child(3){animation-delay:.3s;}
   .demo-fade-out{opacity:0; transform:translateY(4px);}
-  .demo-side{flex:1 1 240px; display:flex; flex-direction:column; gap:12px; text-align:left;}
-  .demo-alert{
-    background:rgba(226,102,90,0.09); border:1px solid rgba(226,102,90,0.45);
-    border-radius:var(--radius-md); padding:13px 15px;
-  }
-  .demo-alert-head{display:flex; align-items:center; gap:8px; font-size:11.5px; font-weight:600; color:#fff;}
-  .demo-alert p{font-size:11px; color:var(--white-muted); margin:7px 0 0; line-height:1.5;}
-  .demo-stat{
-    background:rgba(52,194,129,0.09); border:1px solid rgba(52,194,129,0.45);
-    border-radius:var(--radius-md); padding:13px 15px;
-    display:flex; align-items:center; gap:14px; flex:1;
-  }
-  .demo-stat-num{font-size:16px; font-weight:700; color:var(--status-green); line-height:1;}
-  .demo-stat-label{font-size:10px; color:var(--white-muted); margin-top:3px;}
   .demo-label{font-size:11.5px; color:var(--white-muted); text-align:center; margin-top:12px; font-style:italic;}
   @media (prefers-reduced-motion:reduce){
     .demo-typing span, .pulse-dot{animation:none; opacity:1;}
@@ -279,8 +265,6 @@
     .hero .sub{font-size:15px; margin-top:12px;}
     .hero-demo{margin-top:26px;}
     .demo-chat{padding:13px 14px;}
-    .demo-side{flex-direction:row; flex-wrap:wrap; gap:8px;}
-    .demo-alert, .demo-stat{padding:11px 12px; flex:1 1 140px;}
     .demo-label{margin-top:8px;}
   }
   /* shorter phones (e.g. iPhone SE) — trim further so the hero still fits in one screen */
@@ -509,21 +493,8 @@
           <div class="demo-typing" id="demoTyping"><span></span><span></span><span></span></div>
         </div>
       </div>
-      <div class="demo-side">
-        <div class="demo-alert">
-          <div class="demo-alert-head">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="#e2665a" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4" stroke="#e2665a" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="#e2665a"/></svg>
-            Issue flagged — before checkout
-          </div>
-          <p>Unit 4 guest reported low water pressure. Housekeeping notified — 40 min before next arrival.</p>
-        </div>
-        <div class="demo-stat">
-          <svg width="52" height="24" viewBox="0 0 58 28" fill="none"><polyline points="0,22 9,18 18,20 27,10 36,13 45,4 58,7" stroke="#34c281" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div><div class="demo-stat-num">+12%</div><div class="demo-stat-label">upsell revenue, this week</div></div>
-        </div>
-      </div>
     </div>
-    <div class="demo-label">Example of what Ava and your dashboard show — illustrative</div>
+    <div class="demo-label">Example of what Ava shows your guests — illustrative</div>
   </div>
 </section>
 
@@ -532,7 +503,6 @@
     <div class="section-head reveal">
       <span class="tag">What The Butlr™ Is</span>
       <h2>One platform, two sides.</h2>
-      <p>Your guests get a concierge. You get the intelligence behind every conversation they have with it.</p>
     </div>
     <div class="grid-2 reveal">
       <div class="card">
@@ -616,8 +586,8 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="tag">How It Works</span>
-      <h2>Revenue Intelligence in Three Steps</h2>
-      <p>A unified platform that combines guest-facing digital services with powerful business intelligence to drive operational efficiency and revenue growth.</p>
+      <h2>From Guest Message to Business Impact</h2>
+      <p>The same three steps turn every guest interaction into revenue captured, risk caught early, and intelligence you can act on.</p>
     </div>
     <div class="steps reveal">
       <div class="step">
@@ -626,7 +596,7 @@
         </div>
         <span class="n">01</span>
         <h3>Guest Interacts</h3>
-        <p>Your guests use our white-label digital concierge for seamless check-in, requests, and personalised recommendations.</p>
+        <p>Your guests use our digital concierge for seamless check-in, requests, and personalised recommendations.</p>
       </div>
       <div class="step">
         <div class="icon-badge">
