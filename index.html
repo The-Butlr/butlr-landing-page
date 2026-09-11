@@ -775,10 +775,18 @@
       <h2 class="r-title">You're operating at real scale.</h2>
       <p class="r-body">At your size, a self-serve application isn't the right way in — you've got requirements a form can't capture. Let's just talk.</p>
       <ul class="summary-list" id="summaryBig"></ul>
-      <p class="fine">Send the note below and we'll set up a call within 1 business day.</p>
-      <div class="actions" style="margin-top:6px;">
-        <a class="btn btn-solid btn-block" id="bigCallLink" href="#" target="_blank" rel="noopener">Open email to book a call <span aria-hidden="true">→</span></a>
-      </div>
+      <p class="fine">Leave your details and we'll set up a call within 1 business day.</p>
+      <form id="bigForm" novalidate>
+        <div class="field-row">
+          <div class="field" data-field="name"><label>Full name <span class="req">*</span></label><input type="text" name="name" autocomplete="name" required><div class="err">Please enter your name.</div></div>
+          <div class="field" data-field="email"><label>Work email <span class="req">*</span></label><input type="email" name="email" autocomplete="email" required><div class="err">Please enter a valid email.</div></div>
+        </div>
+        <div class="field-row">
+          <div class="field" data-field="business"><label>Business / property name <span class="req">*</span></label><input type="text" name="business" required><div class="err">Please enter your business name.</div></div>
+          <div class="field" data-field="phone"><label>Phone (optional)</label><input type="tel" name="phone" autocomplete="tel"></div>
+        </div>
+        <button type="submit" class="btn btn-solid btn-block">Request a call <span aria-hidden="true">→</span></button>
+      </form>
     </div>
 
     <div data-mstep="result-nonuk">
@@ -821,6 +829,21 @@
       <div class="copy-box">
         <div class="copy-row"><span class="lbl">Application text</span><button class="mini-btn" onclick="copyBox('applyCopyText', this)">Copy</button></div>
         <textarea id="applyCopyText" readonly></textarea>
+      </div>
+    </div>
+
+    <div data-mstep="success-big">
+      <span class="result-badge badge-good">● Call request sent</span>
+      <h2 class="r-title">One step left — send the email.</h2>
+      <p class="r-body">We've opened your email app with everything filled in. Just hit send. If nothing opened, copy the details below into an email to <strong>hello@thebutlr.com</strong>.</p>
+      <div class="success-steps">
+        <div class="s"><span class="n">1</span> We review it personally — usually within 1 business day.</div>
+        <div class="s"><span class="n">2</span> A short call to scope a pilot that fits your portfolio.</div>
+      </div>
+      <div class="actions"><a class="btn btn-solid" id="resendBigLink" href="#" target="_blank" rel="noopener">Open email again <span aria-hidden="true">→</span></a></div>
+      <div class="copy-box">
+        <div class="copy-row"><span class="lbl">Message text</span><button class="mini-btn" onclick="copyBox('bigCopyText', this)">Copy</button></div>
+        <textarea id="bigCopyText" readonly></textarea>
       </div>
     </div>
 
@@ -953,11 +976,12 @@
       buildWaitlistForm("waitlistForm-small", "small-operator");
       goTo("result-small");
     } else if(seg === "big"){
+      // No submitLead() here on purpose — this only shows the result screen.
+      // The actual lead capture fires from bigForm's submit handler below,
+      // once the visitor has typed real contact details, not the instant
+      // they land here. (Previously this fired blind on arrival, before
+      // the visitor had entered anything, producing a near-empty lead.)
       summaryRows(document.getElementById("summaryBig"));
-      var subject = "Discovery call request - " + labelFor("units", answers.units);
-      var body = "Hi Butlr™ team,\n\nI'd like to talk about a pilot at scale.\n\n" + buildAnswerBlock() + "\n\nName:\nBusiness:\nBest number to reach me on:\n";
-      document.getElementById("bigCallLink").href = mailto(subject, body);
-      submitLead("big-operator-call", {answers: buildAnswerBlock()});
       goTo("result-big");
     } else if(seg === "nonuk"){
       buildWaitlistForm("waitlistForm-nonuk", "non-uk");
@@ -1051,6 +1075,40 @@
       answers: buildAnswerBlock()
     });
     goTo("success-apply");
+    window.open(link, "_blank");
+  });
+
+  var bigForm = document.getElementById("bigForm");
+  bigForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var fields = ["name","email","business"];
+    var ok = true; var values = {};
+    fields.forEach(function(f){
+      var input = bigForm.querySelector('[name="'+f+'"]');
+      var wrap = input.closest(".field");
+      var v = input.value.trim();
+      values[f] = v;
+      var valid = f === "email" ? validEmail(v) : v.length > 0;
+      wrap.classList.toggle("invalid", !valid);
+      if(!valid) ok = false;
+    });
+    values.phone = bigForm.querySelector('[name="phone"]').value.trim();
+    if(!ok) return;
+
+    var subject = "Discovery call request - " + labelFor("units", answers.units);
+    var body = "Hi Butlr™ team,\n\nI'd like to talk about a pilot at scale.\n\n" +
+      "Name: " + values.name + "\n" + "Email: " + values.email + "\n" +
+      "Business: " + values.business + "\n" + "Phone: " + (values.phone || "-") + "\n\n" +
+      buildAnswerBlock() + "\n";
+
+    var link = mailto(subject, body);
+    document.getElementById("resendBigLink").href = link;
+    document.getElementById("bigCopyText").value = "To: " + RECIPIENT + "\nSubject: " + subject + "\n\n" + body;
+    submitLead("big-operator-call", {
+      name: values.name, email: values.email, business: values.business,
+      phone: values.phone, answers: buildAnswerBlock()
+    });
+    goTo("success-big");
     window.open(link, "_blank");
   });
 
