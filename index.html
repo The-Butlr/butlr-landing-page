@@ -323,6 +323,19 @@
   .card-signal .dot{width:6px; height:6px; border-radius:50%; background:var(--primary); flex:none; animation:butlrPulse 2.4s ease-in-out infinite;}
   .card-signal span.lbl{font-size:11.5px; color:var(--muted); font-weight:500;}
   @media (prefers-reduced-motion:reduce){ .card-signal .dot{animation:none; opacity:1;} }
+  .proof-alert{
+    background:rgba(226,102,90,0.07); border:1px solid rgba(226,102,90,0.35);
+    border-radius:var(--radius-md); padding:12px 14px;
+  }
+  .proof-alert-head{display:flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600; color:#a8382c;}
+  .proof-alert p{font-size:11.5px; color:var(--muted); margin:6px 0 0; line-height:1.5;}
+  .proof-stat{
+    background:rgba(52,194,129,0.08); border:1px solid rgba(52,194,129,0.35);
+    border-radius:var(--radius-md); padding:12px 14px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .proof-stat-num{font-size:17px; font-weight:700; color:#1f9e63; line-height:1;}
+  .proof-stat-label{font-size:11px; color:var(--muted); margin-top:3px;}
 
   .steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px;}
   @media (max-width:820px){ .steps{grid-template-columns:1fr;} }
@@ -476,8 +489,8 @@
 <section class="hero">
   <div class="hero-inner">
     <span class="eyebrow"><span class="pulse-dot"></span> Built by hospitality owners, for hospitality owners</span>
-    <h1>Guests get a concierge. You get the intelligence.</h1>
-    <p class="sub">The Butlr™ sits between the two — before it costs you a review, a refund, or a missed upsell.</p>
+    <h1>What happens during the stay decides everything after it.</h1>
+    <p class="sub">The review, the refund, the upsell — all decided before checkout. The Butlr™ is there for that moment.</p>
     <div class="hero-demo" aria-hidden="true">
       <div class="demo-chat">
         <div class="demo-chat-head">
@@ -548,9 +561,9 @@
         </div>
         <h3>Revenue Intelligence</h3>
         <p>A guest asks about checkout time — Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
-        <div class="card-signal">
-          <svg width="40" height="18" viewBox="0 0 58 28" fill="none"><polyline points="0,22 9,18 18,20 27,10 36,13 45,4 58,7" stroke="#08301d" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/></svg>
-          <span class="lbl">Upsell signal, trending up</span>
+        <div class="proof-stat">
+          <svg width="40" height="18" viewBox="0 0 58 28" fill="none"><polyline points="0,22 9,18 18,20 27,10 36,13 45,4 58,7" stroke="#1f9e63" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div class="proof-stat-num">+12%</div><div class="proof-stat-label">upsell revenue, this week</div></div>
         </div>
         <span class="chip">Business Growth</span>
       </div>
@@ -559,12 +572,15 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Risk Prevention</h3>
-        <p>A guest mentions the boiler's playing up, in passing — Ava flags it before it becomes a 2am call, a refund, or a two-star review.</p>
-        <div class="card-signal">
-          <span class="dot"></span>
-          <span class="lbl">Flagged &amp; resolved before arrival</span>
+        <p>A guest mentions low water pressure, in passing — Ava flags it to your team the moment it's said, giving housekeeping time to sort it before the next guest ever notices.</p>
+        <div class="proof-alert">
+          <div class="proof-alert-head">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="#a8382c" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4" stroke="#a8382c" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="#a8382c"/></svg>
+            Issue flagged
+          </div>
+          <p>Low water pressure, Unit 4 — housekeeping notified, 40 min before next arrival.</p>
         </div>
-        <span class="chip">Review Protection</span>
+        <span class="chip">Faster Response</span>
       </div>
       <div class="card">
         <div class="icon-badge">
