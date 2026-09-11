@@ -294,6 +294,21 @@
 
   .grid-3{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px;}
   @media (max-width:820px){ .grid-3{grid-template-columns:1fr;} }
+  .do-col{display:flex; flex-direction:column; gap:12px;}
+  .do-col .card{flex:1;}
+  .proof-chip{
+    display:flex; align-items:center; gap:9px;
+    padding:10px 13px; border-radius:var(--radius-md);
+    font-size:12px; font-weight:500; color:var(--fg); line-height:1.4;
+    border:1px solid; background:transparent;
+  }
+  .proof-chip svg{flex:none;}
+  .proof-chip--revenue{border-color:rgba(31,158,99,0.38); background:rgba(31,158,99,0.06); color:#146b45;}
+  .proof-chip--revenue svg{color:#1f9e63;}
+  .proof-chip--risk{border-color:rgba(194,69,58,0.38); background:rgba(194,69,58,0.06); color:#8f2f26;}
+  .proof-chip--risk svg{color:#c2453a;}
+  .proof-chip--intel{border-color:rgba(47,111,176,0.38); background:rgba(47,111,176,0.06); color:#20527f;}
+  .proof-chip--intel svg{color:#2f6fb0;}
   .grid-2{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px;}
   @media (max-width:820px){ .grid-2{grid-template-columns:1fr;} }
   .card .kicker{font-size:11px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted);}
@@ -476,8 +491,8 @@
 <section class="hero">
   <div class="hero-inner">
     <span class="eyebrow"><span class="pulse-dot"></span> Built by hospitality owners, for hospitality owners</span>
-    <h1>The Butlr™ captures the stay when it matters most.</h1>
-    <p class="sub">The review, the refund, the upsell — all decided before checkout, while there's still time to act.</p>
+    <h1>Capture the stay when it matters most.</h1>
+    <p class="sub">The maintenance issue, the 2am question, the missed upsell — The Butlr™ handles it for you, before it lands as a review.</p>
     <div class="hero-demo" aria-hidden="true">
       <div class="demo-chat">
         <div class="demo-chat-head">
@@ -542,41 +557,47 @@
       <p>An embedded platform that prioritises revenue optimisation and operational efficiency — with exceptional guest experience as the natural outcome.</p>
     </div>
     <div class="grid-3 reveal">
-      <div class="card">
-        <div class="icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="do-col">
+        <div class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Revenue Intelligence</h3>
+          <p>A guest asks about checkout time — Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
+          <span class="chip">Business Growth</span>
         </div>
-        <h3>Revenue Intelligence</h3>
-        <p>A guest asks about checkout time — Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
-        <div class="card-signal">
-          <svg width="40" height="18" viewBox="0 0 58 28" fill="none"><polyline points="0,22 9,18 18,20 27,10 36,13 45,4 58,7" stroke="#08301d" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/></svg>
-          <span class="lbl">Upsell signal, trending up</span>
+        <div class="proof-chip proof-chip--revenue">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Add-on booked in the same reply — no back-and-forth</span>
         </div>
-        <span class="chip">Business Growth</span>
       </div>
-      <div class="card">
-        <div class="icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="do-col">
+        <div class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Risk Prevention</h3>
+          <p>A guest mentions a dripping tap, in passing — Ava flags it to your team, who sort it that same day, not after it's already in a review.</p>
+          <span class="chip">Fixed Before Checkout</span>
         </div>
-        <h3>Risk Prevention</h3>
-        <p>A guest mentions low water pressure, in passing — Ava flags it to your team the moment it's said, giving housekeeping time to sort it before the next guest ever notices.</p>
-        <div class="card-signal">
-          <span class="dot"></span>
-          <span class="lbl">Flagged to your team in real time</span>
+        <div class="proof-chip proof-chip--risk">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="currentColor"/></svg>
+          <span>Sorted by your team before checkout</span>
         </div>
-        <span class="chip">Faster Response</span>
       </div>
-      <div class="card">
-        <div class="icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="do-col">
+        <div class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Business Intelligence</h3>
+          <p>A dozen guests this month asked Ava about breakfast options nearby — that's a signal to launch an in-room breakfast add-on, not just directions to a cafe.</p>
+          <span class="chip">Revenue Signal</span>
         </div>
-        <h3>Business Intelligence</h3>
-        <p>Three guests this month asked the same question about parking — that's a fix for your listing, not just a chat log.</p>
-        <div class="card-signal">
-          <svg width="34" height="16" viewBox="0 0 34 16" fill="none"><rect x="0" y="9" width="5" height="7" rx="1" fill="#08301d" opacity="0.35"/><rect x="8" y="5" width="5" height="11" rx="1" fill="#08301d" opacity="0.55"/><rect x="16" y="2" width="5" height="14" rx="1" fill="#08301d" opacity="0.75"/><rect x="24" y="6" width="5" height="10" rx="1" fill="#08301d"/></svg>
-          <span class="lbl">Patterns updating in real time</span>
+        <div class="proof-chip proof-chip--intel">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="11" width="4" height="7" rx="1" fill="currentColor" opacity="0.5"/><rect x="9" y="7" width="4" height="11" rx="1" fill="currentColor" opacity="0.7"/><rect x="16" y="3" width="4" height="15" rx="1" fill="currentColor"/></svg>
+          <span>One pattern, a new add-on to sell</span>
         </div>
-        <span class="chip">Data-Driven</span>
       </div>
     </div>
   </div>
