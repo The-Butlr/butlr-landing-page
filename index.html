@@ -73,7 +73,7 @@
     background:rgba(8,48,29,0.92);
     backdrop-filter:blur(10px);
   }
-  .navrow{display:flex; align-items:center; justify-content:space-between; padding:20px 0;}
+  .navrow{display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:20px;}
   .brand{display:flex; align-items:center; gap:9px; color:#fff; font-weight:700; font-size:17px;}
   .brand-logo{height:26px; width:auto; display:block; filter:brightness(0) invert(1);}
   @media (max-width:720px){ .brand-logo{height:22px;} }
@@ -210,9 +210,9 @@
     margin-top:26px;
     animation:fadeUp .7s ease .28s both;
   }
-  .hero .sub{
-    font-weight:300; font-size:20px; color:var(--white-muted);
-    max-width:44ch; margin:22px auto 0;
+  .hero-descriptor{
+    font-weight:300; font-size:19px; color:var(--white-muted);
+    max-width:46ch; margin:24px auto 0;
     animation:fadeUp .7s ease .4s both;
   }
   @keyframes fadeUp{
@@ -258,7 +258,7 @@
   .demo-label{font-size:11.5px; color:var(--white-muted); text-align:center; margin-top:12px; font-style:italic;}
   @media (prefers-reduced-motion:reduce){
     .demo-typing span, .pulse-dot{animation:none; opacity:1;}
-    .eyebrow, .hero h1, .hero .sub, .hero-demo{animation:none; opacity:1;}
+    .eyebrow, .hero h1, .hero-descriptor, .hero-demo{animation:none; opacity:1;}
   }
 
   /* ---------- hero: mobile fit ---------- */
@@ -266,7 +266,7 @@
     .hero{padding:92px 0 28px; min-height:0;}
     .eyebrow{padding:6px 14px; font-size:11.5px;}
     .hero h1{margin-top:16px; font-size:clamp(1.9rem, 7.6vw, 2.6rem);}
-    .hero .sub{font-size:15px; margin-top:12px;}
+    .hero-descriptor{font-size:15px; margin-top:14px;}
     .hero-demo{margin-top:26px;}
     .demo-chat{padding:13px 14px;}
     .demo-label{margin-top:8px;}
@@ -275,7 +275,7 @@
   @media (max-height:700px){
     .hero{padding-top:88px; padding-bottom:14px;}
     .hero h1{margin-top:10px; font-size:clamp(1.7rem, 7.2vw, 2.4rem);}
-    .hero .sub{margin-top:6px; font-size:14px;}
+    .hero-descriptor{margin-top:8px; font-size:13px;}
     .hero-demo{margin-top:16px;}
     .demo-label{margin-top:5px;}
   }
@@ -355,11 +355,67 @@
   .closing-cta p{font-size:16.5px; color:var(--muted); margin-top:14px; line-height:1.65;}
   .closing-cta .actions{display:flex; justify-content:center; gap:14px; margin-top:30px; flex-wrap:wrap;}
 
-  footer{background:var(--primary); color:var(--white-muted); padding:34px 0;}
-  footer .wrap{display:flex; justify-content:space-between; align-items:center; font-size:13.5px;}
-  footer a{text-decoration:none;}
+  footer{background:var(--primary); color:var(--white-muted); padding:40px 0;}
+  footer .wrap.footer-grid{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap;}
+  .footer-col{display:flex; flex-direction:column; gap:6px;}
+  .footer-col-links{align-items:flex-end; text-align:right;}
+  .footer-legal{margin:0; font-size:12.5px; line-height:1.6;}
+  .footer-links{margin:0; font-size:13.5px;}
+  .footer-links a{color:#fff;}
+  .footer-links span{margin:0 8px; opacity:0.5;}
+  .footer-note{margin:6px 0 0; font-size:12px; opacity:0.75;}
+  footer a{text-decoration:none; color:inherit;}
   footer a:hover{text-decoration:underline; text-underline-offset:3px;}
-  @media (max-width:600px){ footer .wrap{flex-direction:column; gap:8px; text-align:center;} }
+  @media (max-width:600px){
+    footer .wrap.footer-grid{flex-direction:column; text-align:center; gap:18px;}
+    .footer-col-links{align-items:center; text-align:center;}
+  }
+
+  /* ---------- operator visual (P3.1) ---------- */
+  .op-visual{display:grid; grid-template-columns:1.6fr 1fr; gap:22px; align-items:stretch;}
+  @media (max-width:820px){ .op-visual{grid-template-columns:1fr;} }
+  .op-panel{background:#fff; border:0.7px solid var(--border); border-radius:var(--radius-lg); padding:22px 24px;}
+  .op-panel-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;}
+  .op-panel-title{font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);}
+  .op-panel-live{display:flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600; color:var(--primary);}
+  .op-panel-live .dot{width:6px; height:6px; border-radius:50%; background:#1f9e63; animation:butlrPulse 2.4s ease-in-out infinite;}
+  @media (prefers-reduced-motion:reduce){ .op-panel-live .dot{animation:none; opacity:1;} }
+  .op-req-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .op-req{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 14px; border-radius:var(--radius-md); border:1px solid var(--border); background:var(--bg-alt);}
+  .op-req--escalated{border-color:rgba(194,69,58,0.38); background:rgba(194,69,58,0.06);}
+  .op-req--pending{border-color:rgba(230,160,20,0.4); background:rgba(230,160,20,0.07);}
+  .op-req-main{display:flex; flex-direction:column; gap:2px; min-width:0;}
+  .op-req-unit{font-size:11.5px; font-weight:600; color:var(--muted);}
+  .op-req-text{font-size:14px; color:var(--fg);}
+  .op-req-status{flex:none; font-size:11px; font-weight:600; padding:4px 10px; border-radius:var(--radius-full);}
+  .op-req-status--done{color:#146b45; background:rgba(31,158,99,0.12);}
+  .op-req-status--escalated{color:#8f2f26; background:rgba(194,69,58,0.14);}
+  .op-req-status--pending{color:#8a5a00; background:rgba(230,160,20,0.18);}
+  .op-panel-stats{display:flex; flex-direction:column; gap:18px; justify-content:center;}
+  .op-stat{display:flex; flex-direction:column; gap:2px;}
+  .op-stat-value{font-size:26px; font-weight:700; color:var(--fg); letter-spacing:-0.01em; font-variant-numeric:tabular-nums;}
+  .op-stat-label{font-size:12.5px; color:var(--muted);}
+  .op-insight-panel{margin-top:22px; background:#fff; border:0.7px solid var(--border); border-radius:var(--radius-lg); padding:20px 24px; display:flex; align-items:flex-start; gap:14px;}
+  .op-insight-icon{flex:none; width:36px; height:36px; border-radius:var(--radius-md); background:var(--secondary); color:var(--primary); display:flex; align-items:center; justify-content:center;}
+  .op-insight-body{display:flex; flex-direction:column; gap:4px;}
+  .op-insight-label{font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--primary);}
+  .op-insight-text{font-size:14.5px; color:var(--fg); line-height:1.55; margin:0;}
+  .op-caption{font-size:11.5px; color:var(--muted); text-align:center; margin-top:16px; font-style:italic;}
+
+  /* ---------- founder (P3.2) ---------- */
+  .founder-quote{max-width:640px; margin:0 auto; text-align:center;}
+  .founder-mark{color:var(--primary); opacity:0.35; margin:0 auto 18px;}
+  .founder-quote blockquote{margin:0;}
+  .founder-quote blockquote p{font-size:20px; line-height:1.55; color:var(--fg); font-weight:500; margin:0 0 16px;}
+  .founder-quote blockquote p:last-child{margin-bottom:0;}
+  .founder-quote .ph{background:rgba(230,160,20,0.16); color:#8a5a00; border-radius:5px; padding:1px 6px; font-weight:600; font-size:0.92em;}
+  .founder-quote cite{display:block; margin-top:22px; font-style:normal; font-size:14px; color:var(--muted); font-weight:600;}
+
+  /* ---------- data & privacy (P3.3) ---------- */
+  .privacy-points{list-style:none; margin:0 auto; padding:0; max-width:620px; display:flex; flex-direction:column; gap:16px;}
+  .privacy-points li{display:flex; align-items:flex-start; gap:12px; font-size:15px; color:var(--fg); line-height:1.6;}
+  .privacy-points li span:last-child{padding-top:2px;}
+  .privacy-check{flex:none; width:24px; height:24px; border-radius:50%; background:var(--secondary); color:var(--primary); display:flex; align-items:center; justify-content:center;}
 
   /* ---------- modal (quiz + application) ---------- */
   .modal-overlay{
@@ -488,7 +544,7 @@
     <div class="brand">
       <img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlAAAAD8CAYAAAC4o5r5AABSlElEQVR4nO29d5gkV3m+fU/enZ2ZTcoIJAESSSCDwCQbECAyJjiQZKIxNjZgG2zgB8aAABMNGBscMNEWOYhok0EiR5FEEJKQhKSVtLuzu7MTe2a+P57zfqe6d0LPTIfqnue+rr6qY9Xp6uo6T70RjDHGGGOMMcYYY4wxxhhjjDHGGGOMMR3OSLsHYIwxxhhjjDHGGGM6jO3pZowxxhhj1sgosKvm8WibxlJaeto9AGOMMcaUghOAs4FHAXcABoEJYBG4Hvg+8EXgW8Al6TPHAJPpfZsKCyhjjDHGnAn8A/BQYArYi4LEB5FAqgBbgCFgP3AxcClwAfBr4OfAnpaPuo1YQBljjDGbm1Hgu2nZA2wD5tNtNZ0wBWwFrgY+AXwQ+E7TRloiLKCMMcaYzcsIcA7wivR4CxJFi+nWt8rnJ4BhZKmaA/YBPwO+hFx9FwM3NHrQZaAeAbUDGG/uMNbFGHAw3d+JTIrGGGOMqZ9jgfOQC2+GPJ/2p9v8Kp8fQ8JpOj3eCvSimKmr0/K9wLsaPfB206kWqDHgjkhA9SLFfBj98N+lWkyNsAmD24wxxpg6eCDwdmRpmkNz5gKKeRpKz61EWKnmyZarrenWh+bfwyhO6mvAx9Ky4+lUAfUg4F+B49EPPIN+vDngb4D3Y9FkjDHGLEXRsPA/wCPQ/LmILEk7kOepHxkpVmI+vacXCab+tJ4pJJyORoJsJj23H7gI+CjwBeTy60j62z2AdTINHIfEE+h7DBVes3gyxhhjlibmyFOAeyBh04Pm0UNIDIX7bjUBNQrMIoE0SxZRQyguajwtIyD9ROBmwN1QKYQ3Ar9CcVMdRa2AOhk4DX3hOVSRdIrVd+BGCRPgLLAb+Uy/u8L7B4GB9P4wM1bQ95lt6kiNMcaY7uAhKAB8DlmJ+tFcPIlccLNofl6JfWg+HkjvrSBDRoio4bQukEUq1nk0cBSKvfoqyuD7OvCjhnyzFlAroJ4EvADtwEhNnGH1KPxGjWUB7dx3AJejOhRLMY9+gB7040D+wfpw3JMxxhizErtQ0cxF5LI7kJ6PmOLdda4ngshDgIWQmkP6AWSU6UWCagjN4WHsmAPuDzwYiad3oTCcq9bzpVpJrYAaIweDhWKcYfWOy2GhqqTPhpBZK71ox9+I5cVTMEd224F+9Pn0nMWTMcYYszwDwC3RvDuZHlfSa1vTc/VQ9PpUal7rrVlWCu+JGOwhJNgWkRfshcAfonpSn0AFOktJrWtukqwaQ4SM1bGeGbL6HCJH3s+SUxtXYjqto4Lcc50am2WMMcZ0Aqcjw0O7qZDF1Gy6fzvgucD5wLOBk5b5bFv789UKqCGkQofTcqHwvpVuQ2kZ9SIqSE0OUt8PFJH+EcW/Wt0JY4wxxqyfe5M9Te2kH2mFQaQdDqEQohEU5P53qI7Uc4Gbps+MpdcPLbPOegw/G6ZWQB1GKYYLSMhE8NjcKreicCJ9PoTT1XV8PvymC8h1Fz14jDHGGNN47krzE8TqoUIOLN+K4rG2IK/UXiSGbooE1BeBl6IakBMo0W0pDi7zfEOpdZV9BGW/hUkt3GrDrMzrUFpi/BhR0v1nwLmsXiX8IDLFRerkdTiOyRhjjGkGp6E5O5Kx2kkfMp7MFx73kT1SE+QM+wHgz1HD4/eiGlYHaBO1AuoH6bZWno9+jGLg+ABwLSoRb4wxxphycBarG0ZaRQ8yuoCMNgeRmBogx0SHoKqk528BPBMFm78RuBC4rKWjpnHmuz70pYJQksuZ14wxxhjTesZQ2YDImG83M8hj1YdEXcQ3DadbBcVEzSNB1ZMeDyHDzduBVwIPoMWaox4BVc+AFmoer9Y7xxhjjDGtZxj4LXLWe7vZhjTEIRSHHdXP51FlgAgwj+em020eia69qL3bfyJr1P1aNfB61Gc9/sU+ciXweAy5iFazmUFqNKqgjrF6ENkoWeVOp89Gv56VYraKRTp30bo+PqPkgz18xHEwtSRgzhhjTEczCtwKzR87yPFF7WQOWZViHJG81pNutVn5UfUcNN/3oXlwGHgYahHzRVSQ86uFz22nwfFS7d5xjWIIqdDdqMHwcoLitqjy6t2AE9Ln+pEQWkQtZH6dllcBXwG+XPj8Sen1oBniKQTaCEozvQ3w20gU7iAr8Uj3PIgOwAtRY8ZfsHxqpzHGmM3LITT/bUXzRiw7mX5y6aQBNLefhdrEPBR4E/AbmhBs3i0CCqQu55CoCaW5E1mTbg68GHhceu91SIlvJVdG3QLcGLhDYZ1XARejIPlLqRZPjWCULHaORsJtOzJDPjk9P08uK0G630N1wP4h1NMIVAr/POADtCGozhhjTCmJefHe5Orj3RCnXKxyPo3m9ZsgY8o9keHkhcD3m7XhbmABqc8hdJCcBByHxMjPyeJpHlmcooDYYrpNUu1yrKCu0WcjQfImlPq5q/CeHRscc9FSdJO0je+RxdNs+i7FoqW1bXIWyCUgetHB8lJUBv8ZwDEbHKMxxpjO5wDKXrsled6rjV/uRKLsUsRITaRb1Ji8Iyp58FJknWoY3SSg4ruMp+Uu4LMo1XGGLJDC1xp9+waQmBqmurce5DpYpyEh9SVU/j5Yb/2Mowv3x1Bdi/8D/hK56CJALr5H0fo0n8ZUrBI/Xnh/VIa/A/AK4DNIVBljjNncPAkFbUMO3u50wkMTWXvRzDjmy15k7Hgu8CHgPo3acDcJqH6kOMeAeyAXVlhfBskCKQLNw5Izg1x6xWrq0+S+fv3ILXgMikt6G4pLCvfgerg+LW8GvBZ4MxJx8+QqrBEovofsZozCYv3pe0yjdM4d5MKnURk+3JKnA+8GnrjOsRpjjOl8RoAHI89GiI7a5r+dSHhfIFui+qguyNmP4qTvBLwVeWeO3+iGuyUGag6pzjlkLfpbJE4gB5eHu2wbcA2quL4PWXhujETH0egHKNa0guy2G023z6Ey+OsVUKBMiL9DwmYPcGx6fn/a/gj68Y9FB/svgR8CVyDxdAISRzdP320r1Ra0GbJIPAN4TlrPuzYwZmOMMZ3J76D5ZBGJihBSnW5I6SEHkVNYBsPkkgjXoLnyXFQ36m/Sc+vKZO8WATWAdsAYMlFGhdVxJJ7GUQDZh4FPsnxw9d2BRwEPRDFJvejHmEfWnENp3UcBLwPOWed4j0c/3BPRD38s8tluQZYtkPD7DnLBnYfqYyyVXTeG6l7cH5kmj0MWtxBTM8jidRtyW52Pr3PcxhhjOpO7o/lsGM1th9Fc0eluvHDXhTDsJ8dDzQM3IONIuPeiXNHdgPcDf43azl291g03qgfO11GgVgiysAh9A1lqGs3ZwPlIJPQiV9aWmvdEbagfA3+GMuiuqnP9JyOB8wRkCepFAi3ug9Iin4wEzlp5PhIz4UJcTOOfQD/yNSh269vAlWtY762QafJJaX1TSG3PkmOrrkLK+1frGLcxxpjO5AeoKe8UuU3KHEdabDYbU8hI8bdr/WCnm+6CEE9zSCzsR+Lp8ygw+6vUL54ALkdpjy9HAmcKWXoiYHsGuBESZjvWONYHIGE2mx4PoYN5FgnQb6IYrg+zNvEEcgU+HXg8iuvaSq7kOoX203HAs9e4XmOMMZ3Lw1EoSg+59lNYbTY7u5DX6RNr/WC3CKgggse2IcvTi6guhLkWDqLg61dRHRMVweWgehq/vcb1Pgmlkhatf31IQH0XeBqqObUeorDnB4Dnoe8QY41iaSPIcvaAdW7DGGNM5zAGPBVd7Ecz3ghNsYBSeYfbAKegCubHrvz2TLcIqHlyM8Lo7/Nq4GsbXO81wEtQ8PYC2Y0HcrdtZ20pkXdHogtkDZpHwmkauBYd5D9K2xhZagV1cHJavh34d3IhzjGyr3sICbX1bsMYY0y5iSKZZwBnkufHGTT/LNK4MJ5OpgfN9UehxKz/RbHTq86P3SKgiplz8yhL7usNXP+ryHFWC0j0xM49k/qruT4V/UgRDN6DxN4W4C2o6jnkQmD1Mla4f3nh/j+hfRFXGRHLBQo8v9EatmGMMaZziNYlD0XzzDyacybR/GXrk+hHVqeor3gzVOqgb6UPQfcIqF6yi2oYeANwCeurFL6UGHp/Wl/0oZstvHYaKm1QD48gVw6fIe//PchdWLvtei1Ey6VgXgu8j1wzCrIVahi4S53rN8YY03kcgy6Ww2UXNQR70FzQ6Rl4jWAAxTZvQ3PuJEqKe9FqH+wWAQUSJAtISH0lPTe+jvUs13DwwsL9cL+No/TIegTUA5GlaDI9jrYxc8A/olIDxW3vZG1WqKOXuX8BElJhqo0qtBVUVM0YY0x38iTUkmyIXDRzCyphAHbhgfbLXmRkiJpRM6hDyH1X+mC3CKg5comB81m6XtJqrGbt+WlahpmvDwmnPnRwrvb5x9c8DrfbNLI+1b621iKd1y9z/zLk1htCB8UA2j+9qLCaMcaY7uM44E/QnLWV3JpsC/JaRNXuzc4iqvu4DRWqBrnxbkDljJalG3feT1d/y5KsZu35RVoWm/n2IUFyah2fv11ajlBtafoxOXsuWFdV1BX4Ulr2oj/RKBKBx+A4KGOM6Ub+HFlUBtGcEwU0Zwr3HQelefwQ2hdR6mEvCgE6HbV/Caq8Td0ioIrBXpPLvmtjRDYbVB909fiQT0NXAPH+uL8PtWhpNgfQfhmgut1LH240bIwx3cYJqFTNYLsH0gFEbFgFzZO9SEiFS6/YM6/Ku9UtrVyibPsCa4sbWguzaAf3kQVUZDWsxtHkDL5e8kE9gKL/H9LQkR7JrcjNkoN4bAuUMcZ0Fw9H5/1uaBbcChbTLeb3BVR8+ig0x4+xhGeoWwQU5B0wvdob10kItH6qRVMvq4uoLekWFr8QUqOoNtT9GzrSIznIkYHuQ2kcO498uzHGmA7lNqjO32Hk7XCm3cpEM+LBdJshNx2+BrU9WzKsptsEVD/NP1h6OdL1Wa+AAgmx6By9BcVE1VqHatmonzqKaMa2w4VYdEsaY4zpfH4fiajrkEXF5/iV6UH7KXrTRk3Jo4D3oDjlJek2AdXsoLj1pnxGjFaUzh8qPJ6n+X7qMOMOkLtR95LNlMYYYzqf2wGPRJaTY2leSEs3EXNyBcULH5Vu+1CT4WXpJgEVtNLnG+UMVhNWU2hcte6/VhUzm6c6eJzCeMabvG1jjDHNZwR4HHASmvzDw9AtyWLNIubheWRgmENz9r8B31zpg90ooOZWf8u6iBirYC3CZxbt6wFkIoyI/zn0463WPHijxc7mUDbBAaoD2AdZwTxpjDGmY7gVqjdYAW4KXEluIGyWpx9l3/WghK+DqPPIG+v5YLcQvX5qLS2NophxN0d1SYDVFP40atdycvrMLBpvP6pC/gqyqXUH2So0Qn0m2GPT+rcjkXcwrScaIAfbWb7SujHGmHKw1Ll/pflgB/B68rwyTZ5nNruAGkD7IGKNe8hzeXQvGUZz52RavgEV0lwRm/Zawx6yaRCyFWgO+VqLf4rxwv16/dd7UKD4AbJgGufIzAGLJ2OMKRfFHqjR0WKpc388t3uJ1/4AWZ0W0bwSPVcPL/HezcYMS4uneDyAxOZcWv4r6iG7ai9aC6jWcDkSNMUrgfBPn5Ye19s4eDmK7kSXJjDGmHKxY5nnixe2y100F8vQ7K157TjgKei8H1nic+RSNZud2Ad9ZM0TtZ4WkYA6iPbf55ElD+owYHSTC6/sfB24Zbo/hwTUFuAWLFOkaw2MUl0hdaU+enbjGWNM6xlPy3uiKuG3QmEdvwAuQpP3N5b57Er9XZ8D3CGtfysSClNIHERoy2amnywsw3AR8cy9aF+NoIDxt6H5cRcKxF8xjMYWqNbxYfKPtkg2I+5CmROwfitU/LnGCs+NLrO+GMNxG9ieMcaYtfNKFJz8V8BdkTvuoUgEnQd8EPi9wvt3LbOeeP5BwDnovB4xTzPptSgOudkJnVOse9hLTuyaRzFjfwd8Nr0e/WlXtEJZQLWOTwM/SfcHycW6FoG/RObd+LFqq4bXS9GKdSit71ko0+43wI+ALwIXAh8F7rvO7RhjjFkbNwV+F1mdoqvFiWiyPoy8Aw8G/gV4K+pSUdtoPtiX3v9MdOF8iNwkPjLKBpGo2uwskLPeo6zDALk+YwV4O3DBWldsF15r+RC5sXCYE3uBWwN/Arw2vW8lc209hJvudHSlM4KC1U+oeV+zGi8bY4yp5sXAndF5f5xcVmYIZYHNISF1DPAolF39UeCTwLVLrO9pSGQdJBdJnkrrihCRGWwogey2C8sTaN/MAB9BNZ/WjHdsa/k/lBoZweRRuGsKeCIqgNYIIsbpT9HVzlGF7cUVyg+AzzRoe8YYY5bnJOAR6Px/LbqojfiaqA8YmWCH0BxxN+Bc4IGF9USC0F3Sa4eQtWlbuj+d3jNH8ztzdAr95ILX0bu2gubBceAlwNXrWbEFVGv5FvAVsoVpEB3ofah30ZuAMzaw/mJM098Af5TuR7uWOIDmgXdsYDvGGGPq5/5I3PQjl9t1wFVI+ESLrz5kjeojx8luQbUCH5XWsx84HngBWSANonN8WLLGkZcjCjhvdnqQWNpKrsMYsU+PoY56T8thAdV6/gId1LPoSiQqgs+gYMLXo8y89RAxVA9P2zmW/Gcqvv4RFMi43lgrY4wx9XMrctPaWapdbasxgoLPH54ePxi4E3A9yweZm8w82oez5OLSs8BrUGzwurGAah1hej2AfNe96A8UDKXX7gh8AgWWrzVLbgfwauA/UcDiArn2yEF05XMl8N/puY3GWhljjFmZMVRmIKigZr9hfVqN64EbAy8HHosufsfQxbfP4fURFr4oUfB+4N0sH6RfFxZQraNYm+k9KGA86j9FMPd2ZBW6OfqTfBgVSCuWJ1iOV6Oees8qvL8XmY2nCtt6BXIlGmOMaT7DSABBDu7+FfIM1FPocjsSUZX0/kPkdl0b7ZO6GVhA4imKi16Gqo3X2+ljWewfbR/PR1lxDydboirItLgFiZ+zgXsBLwR+CfwM/ZFm0Z/vJOBmKKCwgtyAFXJGx0JaV3Au68w2MMYYsy52o/NwhG6MkcM36hFAO9DF8YtR+EU/ugBfqWCyySyQXXgzyJL340as2AKq9RQrm/4FMuU+F/lij0biZxJdZRyL/mQnp9vZhfXMkQMIJ9Nya+H1SNkEuALVFnl7g7+LMcaYlTkWWUCiLtM0ORusnlpN+1CF7C+kxx9H9aTugwoizy3zOSOG0Hy6DdXX+kCjVmwXXmvZSbXZcAJ4HnLTzZPF0DD600U5gkn0pyv+USL4HLIFayatMwTVAPBz4FUoYK7YQ8nBh8YY03x2ktPoQdako8kXwavxeRTXGvPBAWSN+hrudVcPvai+1teQIaGhKzatI0yutcHhb0OZFW+hunP09vR4GJmAI/WyGHgYVVYXkNIeQZbFfUht3wd48xJj2VDwnDHGmLqI0gRRh+8y5NaboT7r0UtQ6EYwhjwXLwPOb+hIu5NJFFv8z2ww666WRgmomMCjXHoo7ZllP7E+Iu1+CNVu6E3bje0cpnluyajLEcUv55BViDSWo9ewrqWC134MPB0VW3sbcDn64afQfo0bVPvNi5VVJ1Bw4tuAhwFPpcEHjDHGmDUxhQTUBLoQ/g1y2w2jeWUAzV0xn21Jj6fQfPDTmvVFy65foGztHyGrVNQ7WkTuqpgnesnxtTGPLZDbmnQ6k0gTQI4z20GueTgCvBP4Us3nNtwLtlFi40XI5bSIBn4ICYxm+Wa/g0yYISoiun4b2U/cjG0+Cx2ocZDHd/wV1VcIG+HL6XYzVFTzpqhc/24UdH4M+sNNIOF2APg2uqq5OI3lFw0aizHGmI0RhRp3pftb0Tm8H138T6Nz+9VoUq+k974GzQUrcQD4fZSWf0dyrNU4mqe2onm5HwmnfnLhTuiOSuWD6HtFNnsvstD1IKPL14D3Ut0rFhqQhdeMFMgd6McDHQTd4CqKwO9iAHhZGEF/RmdkGGNM+bgV8DlUQfw3yNtwOeoUsYgE1A6yJ2cQlbp5PvVXyT4BpeY/FM0Fsa6IpQ3x1Eu1caMbEskqyHgSbXEGUaX3Y9A+eD7aNyBB1bDaWc0w340X7rdCPEVPoWYyUbMsExNYPBljTFk5jITQPmQROhWVpJlGnpMh5K7rR8Lm86it1w0oDrYerka9T9+VPtOflvuQSFsgp/GH665beuX1IetTMVB/FO3rL6JmzEFDC492g/9zgtYKG2evGWOMqZcJZAU6jCb545CFJJKCepDYuSE9fiPww/TZA7UrW4FZVBLn5aiBfAiLYn+9SEDqLzzX6WxBwjDclYfT/auANyBr385lPrshukFAtZpucEkaY4xpDfuQ6y7iZntQJl30xetHQmkbcj+FFWWtnpUDKBb3Dahd2BRy7fWSY65q5/xuEFAgYRi1tSLG6+vIAgW55A800GNlAWWMMcY0l2+gSbyCJvjjgD1oDh5CYRjbkah6avrMej0rB4D/QBl8N6D6fzNUW53CEtW3zm2UiciMr6DvNoRcmh8qvGdP4X7DPFbNFFDNjksyxhhjOoFvook+rECjyLU0jGKSjkPxw4uofdeLG7DNL6P6gtei2J9iKZ5wHQ4u++nOoZfcvixE1M9oYMXxlTbcLMoYcG2MMca0mm+gSX0ACaV7IFG1H038/UhI9aB5+UnAny2xnh1r3O73gYcAn0LWpoi7ClfhfnLx5rBGzaQxhMux7MyR6z1V0Lhf2ooN24VnjDHGNJ/XIOvIKIpN+iJyNw2iOKl5skAaA54B3Ds9Do/OOGsPiL4OFWl+GqoTuIvcGuzYwrrDFbYVibkpOqdVTB+5FuN5wCWt2KgFlDHGGNN8zieXL9gJ3AX4CIpZGiZXJN+S3n9jVKT6tPRasN6yNf8NnAN8FIm4ASSu+sgdPcINNpU+c9Q6t9VKoo3ZAtq372Zt2YvrxgLKGGOMaQ3vQdl2k6gNy2fRpL8NCZq9SAgMoMy9e6Ked8cV1jG2ge3/EFmj/ha4AlmjogZVxGdFbcU5OiPrPFyOO5DLMkpAND0O2wLKGGOMaS670/J8lBm3gMTLmUjIzJItU5PIjXZseu9DUUzPiWkdB1l7LFSRfajB/J8AH07bHkGuxEPkvnzRIqUTiF5/55GtT02Pw7aAMsYYY5rL3rTch9xyEcz9AORSi1ijfuTC24csTVPIEnR34PWoNypUd/xYjeVipn6CXHqvQQHtC+QGx9NpWW8l9HYyhvbRt4D/a+WGLaCMMcaY1tCH2q1cgETUbiSaLkivHUTWp0NIJO1G4msbcB/gdcDN17jN2pipcAFOIEvWPyE34XmoEX30k5tAMVKdwGEU+9TS7P9mNBM2xhhjzPI8HAmXEWRl+lPg7eTyAb1kq9QQElYD6fnvoAa5327CuG4P/D05+w/Kn4k3iUTibdH+bJmIsgXKGGOMaS0fRS65o5FgeipyP0U7l+uR+6yCxMFWZKGaQ0LhjcBjmzCu7wOPBB6NakdFq5cKObh9iOrYqB5y/aoQeQuFz2yUMPRE25tp5GqcTdvbArwfWetaaoGygDLGGGNazzeAd6CSAndFrro9SCCcjLLwIjNuAcVMLSAxdQskoJ6d1nVCYb0bydIL/hf4a5QF+G2yu68fuRb3I3G1jVwAdBFZgybIBS0bMZao4B5CrZ+8L3rS8svkOLOWYReeMcZsXkZRvI1pD3cG3gqcDnwaued+H4mVbWQLUC8SDbPIAjSMxMpe1Dz4XUhINMMCMwI8CFmmzkBWs21IJB1CQilETYidQVReYCK9dyPMpTFMou8+h6xx0+n5zyGXaMuxgDLGmM3LLtqfqr4VCYMIXG65JaHNPAZ4G4qF+i6Kdzob/S6HkGgIS0u4xaIxcC8SFh9HFqMJmiuK7wc8DnggEnnj6fnhtJxCom9rGtssWQSulzlkyYryCqFbFtJrT0Lis+VYQBljzOZjJ/BMGtO0dqPMoUl2EfgY8CzgmraOqLWMod/hj1Dc00dR9fHTkEiaTe+LOKNFJB56kZAaRQ2Dv4uy6b5RWPcxNCeT7tZISD0CuEka0yyyOvUjATWPRM/WDW5rnlx8dJEs+PuAH6ESD23BMVDGGLP52M/aagk1kwE0KUZfuM0knkAWp3OReJxDxTUvRaIohBLp/iJZSMVzv0GurPugUgRPTK+N0rwyBD8FXoncjU8HPpDGfhwSTPuRtez4BmyrDwmzouWpDwmrC9JzTa86vhQWUMYYs/kYTbeyMJ2WG3X3dCr7gX8HrkRu1YcgAbUPiYUIJp9HwiQsdhVkwTqEqpaPpvW8D8UqNYM4bg4BF6P4q2chMfV64CqUEdeLqqxvlB5k3eoh9+0DuQs/k+63NPsusIAyxpjNxyGya6gMxFw01NZRtJeLgIcB30OWuOOQYKik1yPmKVx3IaqmkEv2KHIxzgcgYfO0JoxzqfiqQ8BXgZejYPMnIItaXwO2VxRQ/WSRPY32WXBMA7a1JiygjDGmOZS9DcYweXJuN4Pk1PTNzOWoSOYFwC2R62oI/U4VsvsuxFQFuUCn0g2ye+vWwD8CHyKXOWi21XEfskp9ELkSbww8D2XKTaLfdyaNcYDcCHgeCaI5skCMljIVZE1bQGUetqXPnUd1wkHLq6ZbQLWHsp9YjTHro/jfPrDsu4xZnouAFwLvAU5FwmBXem0cuewWkZiop87S7ZGAeS45jqiVMUP/gSqtPwh4MvDPqGjopUgcHUaCaQcqiTCJ/js9yKpWSY97kVVuLt3+p4XfYUnanb66WfGJ1ZjuxP9t0wi+gSxK21BblSuQOD8RVSnvT/fHkfVuJU5GjYOfj1L+n4osXGPI3bed5h63o2ic48APkWsPZFUaQ9mHpwN3Qhar/jSe+EyIqAion0rf5+ImjrkuVhJQJyBlOETnNBQ0xhhjOpkdSDhchNxfz0cxTWPI6hTxTweoL8boCuAUFEd0DPBeZN16B3KBLZX1GGNoBMvVpLo+3f4xPR5BwecnohIOt0RZfNPkoPRB9J0/joTVDQ0a47pYTkC9ABX3Avkmt7RmOKUlytQvItPhDNnnPIuqx14N/BL5sPdRreh3cmRHbGNM/bhittksjBfuX4zceX3A76Xnok1KVP9ejaOQWyzm+0HgT4CzgE+ipsbjNZ8ZL3y2USJljJWrpU+k269RQHpwPDnj8AbgdmhfvAcZePYDl6E+fj9CmYzXN2jMK7KcgDoaqb8e9AMNtGIwJaZYiyOoIDFVQVcHxSuBSSSmLkJ+3l8Cl6Crhwqq2xEcm543xixPUTydgSaByCJrd+r7TtSLy5hmcAXwN8CvUAzRLnTsbyUHjq/EAvq/bEn3D6K561TgOcBDUTuZ93GkWGqkhefgOj9XayG7CngwElYRy/W7aN9Mo/31dRT3dREyajSF5QRUWFsi0n+zZ0ZEdkikkEI2owYhqHpQdssZ6RavHUaWqcuBC1EQ3VeRePLVtTErE/+Ro4HXIpfEEOVIhNmHrui/2e6BmK5lD/AidPH9PHTsX4Uy7cZX+ew4cCNyXNFxSEztRf+pG6HA7r9ENaQ+mNZdVk4Cbob0ySC5fUwPElS3RnFf90Oi7V+RdeqiJdbVFN5MNpnNkAWVb9mFN0O2QFWQyFrpvfHc4cL97wEvRf7eY+v6ZYwxv6T954HibR4FwXYaL6a6jUq792EF+EQzv3CX8CAUBD6LBNW+VW4HURzz9en+OCrSeT0SHxPIanM9+h1+hjL2TmnR91kLI2jO3IuMGpeh77i3cNtHDkAfR9/xv4C7NHowy129hcUpFJ7JRKfpQXJDx7DUrfTeYLhw//bA36OMi88Ar0rPLUVbStUbU0Lml7nfLsowBrN5+BSqsfRPKIOuF4XZRC2lHjTnROzuNJqLhsnhOFHOoIKE2Bg5MP04VFn8HcgidQ+WL73T6mr2Paj/3hz6XgPIlbmIQmdinIfRd5pI73swKvJ5IxpYRqgM5m+jA/tk4O+ArwFvB25e854IvLOQMsaYzc2vUKXx5yCxsAddyO9GFpf9hfdGGM5hJJAqZDEV7q+iJbAXxVndFvXX+zTySp2NsvOKbDT0ZK0C7AwkgMJ9v42cjbgTuR5H0PeLtjggkXU66jnYsAseC6hyMITUchy8TwR+jITUPWre25aeP8YYY0rFT4F/Q3WdrkTC4RDZ2lTM1htCgiksT7EstkgJoTWN5qIx4CZpnX+IKpp/EPhb4J40plHwWgXY7yDRBBKEfWj8Q+l+UQwOoe81i77XduBR6Ds1BAuochEHwxz68c9BMQHnkhtDFi1Q9VShNcYY0718CngKcrcNIvE0n5az5BYpA0h89JFbpGylOmQnRFRUAz+Y3jORnrsD8ApUS+pcVE6glV6RM9F3DIvaLLJizabxHo/iveZQzatr03vnUUbhHPBbjRqMBVR5mEYH60C6TZMPjmcj9X8O1Rao9aaFGmOM6R4uRQU3n4lK5vShoPCBdH+SXL4gyhNBFluzSFDVWqvCmlOMszqARNUfojipTwNvQfPTrWnehf3R5Oy7+F69aZyH0tgiK287ynjfT45Xhpys0BDcyqUc7EFZeFGwdLZwfwYdrL+LAszPQFcA+5Hyt0vPGGPMBBI0X0JB4I9Dc8lucjZaNB+OZr1T6XHEP0WzYsjiZL7wOIp3zpADuO8G3BEJqr1IwF2ASvV8v4Hf79YoBms2jWUoPR+i8FgkFHci0fQtcuZdLxJVB1EZoYZgAVUOooRBdNsuVpgdQgfFMBJMf41MkJG950KcxhhjgsuBfwB+ADwNZdXtQMJiBs0zES80jURQsJheD6tTUUz1Ft6zmNYVxWxj3joe9bO7W9r2BPBtVF38R8DPkVttb2Gb9RoC7k6O7SJ9h7gf2e0zaO78DvLeRPXzRSSe3oO6hjQEC6hyUfw9isVL4+CYQgf7fdGf4uXIF22MMcYEB1HYx6dRa7Z7A7chxw4No4vzBSQ6im6xObI1aoAsuIrvjey5GapDgcJFtojEy3Y0V0XNxJk0tiuAX6Dg94uR6PvVKt/pTCS2ZsnuumgyPIiE0TZUG+u9qOBoWNxI23jtKttYExZQ5aU2Pi3EE+iq4XRUCK8XOK91wzLGGNMBRG+5Z6Gq3E8g13SqoHlkkBzvVBRI2wrv6Un3w23WQ7b0LLB0q7eewv2olQi5YfApKJMPshUptj+B4qwOoXlvF/K07Eqvk7YZrrutZJH3a1Te4VwUA7Y7vb4H+B8a7K2xgOocioJqCsVI3QL4f+hgfHnN+8dwkLkxxhgVav4M8BDgMcC90BwxiYTQVjTHzKP5ZQqJqxA/0WkjLFOk5yOWaiP0Fm7bkFCKbS2SxVIfOWtwMn12GM1zi6hn3tuBP0cC7Kbk7MHo9ddQLKA6g+JBCzqIIi31NsDTkUn03YX3WDwZY4wp8gkURH1vJKTujQTLFNn6dBQST1F4sx/NPxFgHstiTNRGCOtXuP6Kz/cgY0GULJhE818Pso5NINH1WeCTwH+gufBElGh1PWr0/V+oxUtDsYDqDOIqIBoab0EH21R6/gTgJehg/1ibxmiMMaa8REPuceDDwA+RF+P3UT/WW5KLcU4gERWxTjEHRd/XBXQRP0fOGF8vEdDem5Yh0EK4HUCuuEVyA+QxJKSmUDX2+6KYp9n0XX6KCmZeD7wRxUWB3JcHNjje/x8LqM5iluq+RUWr1CmovMEE8IXWD80YY0yJqa36fUm6fRKVITgHOAsVoIwg82EUNxS1lKL5dLEX7EaptTpFJmBsqxdZjyppTEcjIfUhlFX3FhSoPoTE0QDKBHwP8Kc122qYeAILqE5hBh0cofTDEhUHb5g+b4PKHFyEDrAd6GrDGGOMqWUHmiO+k243RbWTfhdVHb8JumDfgsTNJDlgO6qWL7AxonxP8VZkAM1/U6gUwldQVfE7Au9HLrwQdbuBy1AW3ptocq1EC6jOoNj8cEvN82FO3YKE1kOAv0J1ojZqWjXGGNO9jNc8vjTdzkMN7o8HXo2sPtvJsU+LyBsyRe5Nt15qBVOIqLBMHUKxTV9BAu/hSNwNoTlvAVmodiJr2SNQSYOmF5m2gOoMotw+5FiouF80oUY66RPQ1cT52ApljDFm7Vyebr8L3C4tzwRuhcTVCNIQG7VAgSxb+5Fl6bq0PEgOFD8ZNTE+LW03sgV7yX39Xo5iuy4jx241FQuozqEolJbqYXiIfNDcGFmhzsfiyRhjzMb4YbqBsvZOB+4P3BUFokd2HlT3zutHVqFrUY2mvUjwTCKr0f70mW1IGO1ASVG3RXFNw2kdg1SXWQjhNo2E0wXIvRfUxns1BQuo7iEqxsZvegvg8aiomDHGGNMI9iF32leQ4LkRmm/ugvq1nogEURS6PAU4CVmvpsjFObcigbSfbCCIkj39ZMFE4fEisk59C2Wcf4Vc3bzlWEB1D9EQEnTQHY+sUJ9GqZzGGGNMIxlPt58g9xnk9i03R2LqGOBU4AwkpHYiETVDdsOFxQpyYPpses+VKDHqi6i/3wFyQ+OmxzmthAVUd1C0PIEOrGF0NXBflM7Z1GwEY4wxm5qYYw6k28/T87W1l05It+ORmArXXwW59saRVWpfWl/DC2A2Cguo7qCXLKKiQnksH40ElMWTMcaYZrHcHFNbe+nqdOt4lgpGNp1H+IajrMFAuk2h5pG3aN/QjDHGmO7DAqp7GECuu2Ltp34U5HdOOwZkjDHGdCsWUN1BmE7DJRsBehGU9+iWj8gYY4zpYjpFQM2k5VRaTtOY4l1BZYnnojv0HNWVwCfSc8F4Whafm6VFdSgSI2k5mJZbUJXW4MaoXkfQkiJjxjSJfvL/qxG9uDZK8fzh/5bpVnxs19ApQeQhBmZR7Yg+JGpmkdDZ6PeI5oXRaRpy/51+8glyhixWJtL2dyHxVOwPNEgWM9O0v6VKL+qT9/X0uJXizqydbs6YbNR3G07LycL9drGVfA7yf8uUmVHWf4z62K6hUwTUOGoO+BoU0b9IbiDYCEvUDLnaaVRDPTbdxpD1JqqjksYwlN4bAincZfNUXxWX4Qq5D7g76l69f5X3djK1J4cx2lRgbYN0q3iCjX+33WSLNFRbWtvFOPmCqdVsZEI05TtHNOICY6Vjovb57Wl5NPJU3AjVbToK/ddG0PzxI+DtdEn2XKPoFAG1A1l4Li081+raEDtREbBHA89G+24KXX0W6zAtIGHXgw68gSPW1B5uS/PHcj8kNmstbnNLvLeR9CPhOogsEkPIOtiDegJ+vMnbbxZPQL2f5ld7Y5PZmsYwDVwIfK4B6/wD4E5pvUu50GvpR8fvNLqYiVpnZbhA2QH8CWpyOoQEVS/VjVc3Qh+yHn9iidcsntbPbdFxWNvMttX0oOOkH/WBe90G17fcRWTx/i50vr5PWm5B/6eYI2IO60Hn1ROB/67ZTjdbyuuiUwTU3nRrFyPIcrMfVUJ9JfDXwFOQsIr9WHTjgU7yZbhCBl1NNPv3vifwtLStoJGxassRdbBAYm0r2vfTwAfpTAF1Y+CRqN9Uu0V47N9D6f732NgFzA7UMf2xab2rxWJWyBaePenz0UC0LOewx1Dt3t9C9UXVRlgA/hP4Ept8wmowt0cNatt9ji4e3z8C3o2E1EYIsVS0rt0E+G10TrkHqhYe24cs+GuZQ4Kq9tjb9MdiWU4+q7Gb9gaw1R4o88A/AP8HnAvcKz3fT7lEU9CLxrSd5ppgB9HkFsyiP2crYlTiWI4TwFC636l/8ivTsgzHUljAogv6esRT0a0wTv6d5ln9PFS0MoXLYYByWJ9AE0zxGI84TTjSpb8eetM6OvVYLiu96LdqN8XjfwRZ0TdKUTidA5yFulLciOrjMUJQoobgUjHFAyhkpt2xvKWjUwQUVLuBRtHBX1vhtFXERPA1ZCX4N+BsJPTm0H7tozwneNBEfDxwcZO3U/zOEUxfj4tmIyyiP3ntlX40WO5U4qKh3d8hxM5Gzhe1rqai0F3t+0Xn9QV0El8gJ5JUaL/ILMY/gsYW462wcRcetN/N1I0cRmKlXfFrQdGD0c/ahfJyMU9/hBrK34N8LllAoSd96HuHKOpDx9gi2eIULry4ELWAr6FTBFTtSahMfv8DwF8A/4LM+MPkibwRJ85GMYiCA5tB+MLjJD9HFlLh228ms4VtgSayRXJiQKcSmaHt/p/GlWnRPb1e4mRfvCCq5/stFLYd98tykRJWpsgSBo2xh8ZctRdj4MoW9NzJRMxPGf5fcRyv53iunQ8fAjwTCacQRrGNsLoVLzajZmDxv71AdehALzqW22W0KCXtPnDqpYdymFqXYx8KLD8GBeUtUj5XXh8ywzaDuDKJcg5h+WnV8TVI9QRbPAmVScSuhREaU6KjEfSQLXwbtYbFyX6Q3K+xHvqXuV8G4ngrnqMaOcY+cuahxVPjKF7otZOwWPaTLwbrpdio9yQU0/UEdP4IS9JSx2JRLNXOU7UXJguUYz+Vjk4ppNkJXAO8lRxI3o/8y2WhjxzkaowxpjMonrdrY4FDPD0B+ADyhoyQL2TbnYDS1VhANZb3Ap9J9xcpz/6NQN1d7R6IMcaYNTFBTp4ouuuOQbUKPwO8FpUFAcU49RY+a5pEWSb4buJfkOl0DrkpymCFCjFnC5QxxnQeS8UeHQd8EiUwHZWeCw9IJDG0u0p/V2MB1Xg+DVzB0vE4xhhjzEZ5GHA+cCaKm5pKy0icKRZyNU3CO7c5/AwF5k1TDh90D7oasTnXGGM6m8cD5wEnk8swbEXn+Wh2bxdeC7CAag6X0JoK3PXSh0y7rW5/Y4wxpnG8FFWl70NuvWHgWnLZgehdF5QpE7zrKFs6cLewB6UdbyVXem038/hqxBhjOpEdwLOAZ5Br24VQipYsE2hOL843NpI0EQuo5rCf3NalDOIJNJ5ft3sQxhhjjmASWY8Op8e1BVNfAjyZ6qDw2ur0SyUJOQa3iVidNocpylXAsYIsUGWq4G6MMUbn5ih8OQicSLV4ehHwYI4USHFeN23CAqo5ROmCftrfxwyUnTGDY6CMMaZsRLxsH6r3dFXhtScDTwVulh5PF95vD1KbsYBqDsUSBmXYx73Ireg+RsYYUy4GgOs4cq44C3ghuYfpHEe2rLKLro1YwTaH7eSrhDIIqC3AZci1aIwxplyESIowixOReDqF7Karbc1SQXFQFlFtogyTezdyMuWKgQL4No6BMsaYshEC6SC62B0BXg38dnq+Nlh8gdx02OKpjVhANZ4x4DbIuleWAL8F4MJ2D8IYY8wRzKfbAJo/Hgk8huwhCsG0ULjfgz1IbccCqvFsRRaoAY68cmgXM6g6ujHGmHIxiCxJW5Fb7lyU8LMFnbv7yfG0vel+uPLKkKS0abGCbTy3A26CrhIGV3lvo5lDWRqjyF03iv5gnwT2tngsxhhj1sbOdAuiknjRVVeMg/Ic3kZsgVobo3W856+QGTYO+Nnl39pQou/eKCrKNkquPP5xXMLAGGOMaRgWUGtjtSDss4EH1TzXKitUpLhCFm1DwK+Az7ZoDMYYY8ymwAKqcZyKGj1Gz7k+WttQeBS1AVhAFrBJZJH6GHBNC8dhjDHGdD0WUOtnrHD/ZOCxwF1QzFGxX9E0zSeE2gASUb1pDPuBD7Vg+8YYY8ymwgFo9bEDGK95LnoVnQA8HwkokIjpRdkTQ7RuHy+grI0t5AD2twDfbNH2jTHGmE2DLVD1MV64f0zh/t2Bf0LiaQS4Fu3TYqGzVgioXnIXb9L2LwLe1oJtG2OMMZsOW6DWznXAScAfA48CTkdxT3PA7vSeXlTTA9Q+ZSutIVx5W4B3owByY4wxxjSYThFQfagR7hjZddYObgo8G3gc6ncXRcyWauoY+7YR4mkaiaKg2FCSNI4osTALXAK8twHbNaaZDKBjt57zUO374j9Q7+ebSXQc6CO7z+eortezUdr9HY0xNXTSn/JE4LaoKe4AGvsQcp1ttMbRXFpfPzr5bUUC6ai0vAdwa+CWaZsTaZvDtGYfFsVTnKwXCst+8gn7WhTM3uoinsashSmy2FgtWzUqMIMSI3ai/0Ev5aj234cK1RbrxIUrf5LqpJL1MJ/WsRsXxDWmNHSSgHo4cBZZPM2mWy/VAmM99KHmv/PopNeDRNRY2l7RDRcns5H0OCp+N5v5NMba3ywmlkk0Gf0NuV5Vuy12xizHO4EvUF/PyC3oPxjd6M8lV2sug4A6CLwBlQtZRBdZs2k5xcYbi88Al2PxZEyp6BQBVQF2pdtSbLRpb+3VbFwRhzgZIBeqDBETr7VKPEH171Wh+sp8HomnzwLHIUuUxZMpK1/YwGefhS5ghtD/cmjltzedXuDzwNfbPA5jTAvpFAEV45xHV2PzyNrSj0RPbfzReuhb5n5x+0Wm0ImzFSfvHrJQWqob9xTwduDfyNmAxnQrvcjiOkT7xRPoPzfV7kEYY1pLpwioKSRq+jkynmCuAesPwbRQcwNZnLam7cyQu2aHS2+C7M5rFkUXQIjHEFSHUL2nlxXGY0w30wtsa/cgCkxTXUbEGLMJ6BQBVcxkqxTuh/Vpo/WsIr6oaNUpEgHakVUTwa/QfPFUJFx58X2/B3wOeAWr9+kzppuI/18ry4QsxyCtFXQj+ELJmLbTKQIqRFMvecwVGuO6Y5n1LKRtzFMdQB4ia76B21+N2M4i2Rp1LfB+4FUtGoMxZSB6Pkb5gnaLJ5A7sZVYPBlTAjpFQC01zmaPvZcjSwG0QjDNpG2HtStqQB1IyyHgy8CrgU+1YDzGlIlDVLdIauWFzHIMUW0ZN6bRVMiekOLcVzz+4wK/GC/bqCSLQY48xje9JbRTBFS3M4EO0EGOPNi3oD/B9vT4X4HXoXpYxhhjupt9KAM95utJct3CBSSc+jnyQiKSnOaQq/tgWtf+dH+q8NpKzKbPzdY8v6nFE1hAlYWIo5qh+o8QsVmHUIr0/wCfwPFOxhizWdiFrD8VZIEqJlIV438ngD2ohdePgB8DvwF+mj47jTwZ62E3nneOwAKqHBRbwhSZQn+Kc4H/BS5t5aCMMcaUhgGWdlePA18BPghcgIquNhoXcV0CC6jyUAyOvxZdQXwY+CRwZbsGZYwxpq3MovkhumWEiPo2EkzvQXPEnraMbhNjAVUOogL6HuDTwEeA7wBXt21ExhhjykA0p15M968EzgfeB/wAxyK1DQuocrCIeoO9GfjWGj+76TMhjDGmi4nsu1ngG6jjxDtbuP1RFP/k3qo1WECVg37gocDd0NXFZ5A/+1d1fNbiyRhjupfwUHwZeBESUaDM7PUGha+FCB6vFU+t2n5p2WgFb9M4dgGnIhH1SmSa/W/gAeQSBsYYY7qXYkmBuDjuR96JPyeLJ2i/eGn39tuOBVQ5mCNXPo/fZAR4HPBe4LPA84CTV1nPaJPGZ4wxpnlE79Vibacob/NRFPNUj0fCtBALqHIQVcf7UZBg1OuIApo3A/4R9b177ArrcZ0OY4zpPKJIZe2cfBXwRhTWYUqGBVR5mCdfhWxBzUlnkJjaharP3hgV0/wCcK/WD9EYY0wTKdYEnEHn+y+1bTRmRSygykMvsjjNp8f9yIQbrVyGydaps4APIavUrpaP1BhjTCMJL8QceV6+ALXuMiXFAqo89KG+RTPI2hRCapZsmSqyC/hj4N+BO6+w3rEGjtEYY0zzKDawvxAXUS41FlDlYLJwfzjdotpsNBieQ9anLYX3Hgf8AfAy4IGF54tZe67bYYwx5aWCagEukAXUPhTzakqM60CVg2gOuUAWtQtky9MiMvEOFJ4vNh2+b3ptEGVrbPr0UmOM6RBq5+FDqIzNV1s/FLMWOklAhfVlEgmOKWBrem0pF9daWM0SN4OsQEtRK3pq11Wh/v3cW3N/qXEt9XwF+F3gVkg8fanO7W36QmjGGFMS5lDRzFHgWW0ei6mDTnLhxVjDWhPiaZYsKtZ7q2U+rXcKFTML8VRJz02hg704rgWyGXapcTeT/jSeEeDdwJl1fs7iyRhj2kvMGT1o7tkDXN++4Zh66RQBFcocZA2CnO7ZCCvabGF9INfYIBJpI4Xn+9NzW8lZExHsvVi4FWnlPh4GTgTeAtyihds1xhizPmKOiLnsu0hEmZLTKQIq4n8g18eIkve95Lig9d4G0cE7j8Ra1F+aSbcKR4qsoK+w7CULvVYSLsawnN0JeFMbxmGMMWbtFMvX/KSdAzH10ykCKoTBtegAG0J+4gVgf3p9I7fYRiXdFshlBYbIFcKL1q5K4bPBci7BZjNEzrYbRGM7G3htG8ZijDFmbRTdeJe2cyCmfjoliHwRxfY8BxgvPD9CbrjYSEZRJfBhJE5uD5wC3AVZd45FQmkWWay2LL2alhPWsH4kLJ8N/AL4j7aNyBhjzGoski/ir2jzWEyddIqAWkABz+M1zzdDPIHSSIt95S4u3D8exRf9DvB7SFBNoX05UHhfXFG0wiJ1EBXMvA44Jo1nFP0hnwF8G/h+C8ZhjDFm7QyiC/JZHP/UMXSKCy+KSZaBa1CZgJcBfwTcG8VLFduwBK3av5GReAwqwLaVHNN1OvBk3PLFGGPKTC86Z7v4cYfQKQIqTJtl43Lgi0ikvAIFc4flKv4EtaKqGRQtX0WhFFVtnw7ctQXjaCe1x/IC1Q2aO40J8ncwxnQ//SgG6oZ2D8TUR6cIqLJzNfBW5NarIBG1I702t8xnWski8CSqW7xsBtqREdlouuE7GGPqo5jYZEqOBVTj2IPijM4GflN4fmDpt7eURdQr7x7tHkgb6GQB4v+nMZuLWezC6xh8gm4cN0/L7wJPQEHve8mZce2kP92e0e6BNJGlXHXtqsvVCEbQ2P0fNWZzUNZQFbMMPjk3jktq7j8E2I1695WBRWQdu1ebx9FqOvUY76FzxZ8xpn6KF38WUB1Ep04uZWcfcCHwP+Tefe1knpzF+NR2DqQNdKoIsYAyZnPRw5GtwEyJsYBqLGOF+zuAV1KOLLAISpwEziK7G7uRaM9jjDGdQIgmz8cdhn+wxlIM/htHZQ6+1paRVBNF2oZRmYPbtHc4LcVWHGNMmSlanXy+6iAsoJrLKPBSJF4gN0AOC8lMi8YRDZOD+zZpOxUUrD6Xlq3y51fQsTxF7ke4iL53bemG0RaNaaOMUo4EBGNMc+nHVvOOpFNauXQq16TlDcAJ5KuLuOJo1QRZIQuoIeCOTdpOfK+emmWzWWp7kcFWG4N2iM5ggM1Xt8sYYzoGW6CazzXIlQdZMMXVRqsEbPzOYRE6Ezi5CdspdhRvJUsJqPjOO1E2ZKcxCBzV7kEYY4xZGguo1nAZCuReSli0oupsCLUe5F4bQE2QG018l1YLqN6aZZGj6UxL63ZsgTLGmNJiAdUarkburaUsJa1KW11AFrAKEjr3b8I2ItarXcdVH0fGEuymOv6rUziJ8jTQNsYYU4MFVGuYIAc2Q3WAdSusNXNk69AgCra+cxO2U6E6cLxVgZGxneI+jud3AKe1aByN5C44iNwYY0qLBVRrmEf7eqHmOWh9oHVfGsuOJmxjjuo6TIu0RkQtLnN/HtiCqsJ3EjtQpqQFlDHGlBQLqNZQm30HrU1bHUBWrxBtvcjdduMGb2ee5cVMM1luO7GP74vqX3UK24Ez8P/TGGNKi0/QrWEHqvk0RLW7CWS1aQURAwWyygyjhrWN5BokZuK79dGaY6x/mfsRQ3RL4LdaMI5GMAo8DdifHrs31pEUf+MyWOnCVWyM2URYQDWXHWl5InkyX6xZtmsCaEavtWuontx6KEeBuH7goe0eRB3sRNbC21LdFshU04rM1bWwgOIcjTGbCAuo5hIn+lukZYUj3U3tSrGPQpON5HKqXYV9lKc55tnAqe0exCrsB26PSkyEsO7EEgzNplVW23rpo3VdBYwxJcECqrkcQlaFm6THRXdMN+77a1haJLabBRTvVRtMXkYrz5OAY9s9iJIzu/pbWko/cosbYzYR3TiJl4WIL3o6eaJeJFsUomZRGVxcjeQadFyFWCxDjMoi+g0eTXPKNzSKh1Et8qbovuOjEYS1pyz7pgIc1+5BGGNaiwVU84iYiCcj0TRLtZhot7BYoDmxJN/jyJIN7SbE3O2BxxeeP9iGsSzH8cCLUAZe0R3k/+iRlE1AzaJEBWPMJsIn5+byaFRRGmQFKUNF7BBOcWs0F6Rlq9u5rESx1cvDgae0byhLcjTwBOAO6XEIBFciX5qIgSqLq3gL5bZsGmOagAVU46gtCbATeCr5JF/c13OF59rxGyzSvCKXP03rLZOAGkBWghngBOCvgFPaOaAaHgj8PTCeHke5i6jXZaopi+Up6AdOb/cgjDGtpVME1CLlr4dTTGPeDfwlcCY55mmg8Hrxfqs4lJYLaEwzwCVN2M4PgWvTNuZQHE+7qSBBN5wenw68m/ZXKB8D7gO8E41tR3p+iPzfLIPVsmz8Mi3Lck6oICvUOU3cRicVgjVmU9ApAqoX2NbuQayBh5PjWcbbOpJM7L8eZNUYb9J2KmndC0golsENNU8WrTcgYXd3JHIfsMF1H7/M8/Vk+D0M+NAGt78ZiSKj7Y4jDPqBmwFnsfzxsFH2NWm9xph10ikC6iAwWfPcaDsGUgcvAN5Aji/a0baRZObQSX6KnP3XDOsTaRuXkAVaGY6x4kQ7RhZTZwH/jOJXbrbOdV+zzPNLBagX3bz/ALwJ2LrO7W5mrkPHcFmsc9NpeX/gfu0ciDGmdZRhcquHHRx5tXloife1ix3AjYAPAy9G+3WI8sSv1LaN2QJ8u0nbOgh8g+wuK4ObpR+5WGfJk24cP6cCXwN+v/D+ojhfznWynjY4E8C9gPcDz0EWyrKIgE7iesoTQA76P02hc8DbgLcDJ7dzQMaY5tMpAqq2SW2RdhdD3Ak8Evg18GA0SQ4j4VAWARXisxh79c0mbu9b5MKCZTnGhtExFCJyFImXKWQtexX6DZ9MtThfznWyltYdu9Fx+vfAp5BYi9i4sgVEdwLjZAtvWSqAhyVxAfhjVM7jzcBpSCgbY7qMTmkT0cfyKfftqOVzEvDbqD3IGen+QTRJDhbutyNYfCXC2nE58IsmbudnaJLbQXkEVFgFZ6i2REG2Mt0EeC0KBv4icCFwKRJW6+FmqA/ig1Bc3GmF18Jq0YOrWK+VG5CA3UU5BOgcumDais6plbR8CvDnwPeRm+8wEudT6BhcLHx+JXqBK4BzGz1wY8z66RQBNc7Sro4xWiOgbo0yt+4D3BWZ58NFFSfwMfKJsxdN1ENkMVUGorTA11AcSbP4DfBR4DGUJ4g8rHBD6fEkEi5b0QTWg367nSg26iwUrHwD8FXgx2i//YwcxFzL8cBvAfdAx8mt0CRf/J/No8lzK45/Wi97kBtvF+W4SBlItxkkiraQ3cDR3xD028f5Io63evkNFlDGlIpOEVBjwDOAx5GvOitIVM2x8ZPoalexRStKFKKMtiwxMU+QLQkRH1OhHOIpxFxc8f6gBdv8OMoyK4OAgjx5RUHTEMBz5N83+vhFo+WdyP1yauH1KWRFmEAWhagtNZpuvWmdEeTclz6ztTCGEE6HKG8yRJk5gC6qGvHfbwTx/xqqeQ50DEVNrz6Wzhxc7fxzkPJYco0xiU4RUHHy2FV4HBapRpxA13JyWq745VJBxWXZv0Nkl9pvkBWl2XwYeCUSkJNkoXAQlVTo40hXWrPoq1kWWe34Kf7W/WShtBK1ojEEU+0EavFUP6Pk2LRF4CLgTpRDRC11kVB8brXzy2qvj7G81dMY0yZ8VbM5mEfiaQEJqR+3aLvno8muOJkMU576PaZzOFRz/+vo/NVu8WSMaQ/ryYRuKBZQm4MQLL3AV4DLWrTdT6VlWJmiCjrIHebjz6yXz7d7AMaYummE2BmjulDtWjKhm0JZXEym+Uygg/idLdzmj1FNqN9Jj2fJcWLzVPd8M2YtXAl8GbhnuwdijFmRovt9hCx8iklgtwHuCNwW1VPrQYlO1wGfRlmsP0nvX24dLccCavMwAHyM5tZ/quV6VJX9DHKAdRAZgRZQZr18BAsoY8pO0f1etBqdguruPQiFdkR4Rx85m30BeC7wK+A76D//ycI62iaewBPXZiHqzLy+Ddv+EFm0DVKdxg3lqihtOouvcGSLJ2NMOSkmzTwMeAvqR3oUcCyK0x1FQmoQiageZHG6Baqrdh4SXTsoQYNtC6jNQQ/wWeBLbdr+O8l1p2pTtn0MmvXya5rXksgY01gOoa4M5wL/jmrl9ZJbtc0hC9UEuQXYALAXhX7MoYzm/0K9RNveYNuT1+agl9bGPtXyMeCqdL+2N54z8sx62YfaBhljys9O4IXAXyCLU1TwDwaQtWmEHF40h0TXTHq9N33mr4DPAce1YNzLYgHVfRR9zFNp+RaU9l1Lq9JADwKvQy1kikHkRoRVrkL1CaXtWSYlZwR4EwowDcKl5+PLmHLxt6i1UZQeGSCHcizHABJRUQpnkaxbTgVe3uAxrgkLqO7gQFruIWcoRG+unwD/igpoQnVj01ZO0OcBX0CTXVkawJaFGXKJh/n0eA79lt5XyzOB6pr9N3m/DVPdfLwMvfKM2ew8mtyZYghlZM+zuoCC7N6bp7qQ9U2A+6Hm7G3BAqo72I78y8emx1vQAQrKgru48N4DtI8Xpe3P4Qa6RbaSLSfRcqdSeGyW5xDwn+gYj301RXYBWEAZ037OQT1lodoVV48G6SW3wYr7cX48EbnzbtTAsdaNBVR3EZPFIroSfzPwgfYN5wiiIeoIWcg5i0qMIAsiKAPFjYbr51vA+9P9Ysr0LPVd4RpjmsddUX0nyGUH+sl1AOuhj+z6W0QXSZFd/juo+XvLsYDqDioo/TNiaAaAz6BgvaUsTu3qwbYDuRPfiqxm4XLZ7ISb7ljk4uxFYuoA1YLALM9HgF+g4yli+xZxkoIx7ebPyBXEw0q8ULNcidrEo+hJWmzj9MB1j24DWEB1B/1I2UftjO8BT1vh/e2alMfT8v8BP8c1oIJ+sogK993rgR+hxstmdX6MXMRxsq1g8WRMuxkB7k8WO2F1isSPeot5hyV5nhyeEo8nUWPxozc00nVgAdU9hIi6AhUcu7yto1mZ65F17AqyGXYz00e2FB4E3oHKTlyF/6Nr4X3Au9A+7MGdFoxpN8chz0Nc2EQs0zD1n/ujoGZ8Npak9Q4hj0bLC2v65NwdTJMPyMcAP0A9gsrM54GXAfvbPZCScAw6MfwCWVKuRScFp+OvjVcDvyRbn2ZXeK8xpnnsRFXGe8kXM5OF+9PUf36LjL0BqhNr+tF//TBtSEyygCoHRT/wDEuf9Kdrnp9F6nsBHTifRGmiX0uvt7VHUJ18AXgO+i7FfVDr816OOTozzX+B6u8b5ST+D3g8cE16PI/dUGvlEuBxyEUMuRYa5FIHxZO2s/SMaQ77kfUp3HU3kONvp1hbLO4gWa8USxn0of/zCajgZkuxgCoHxQl1CB0sICExQY5viudnyPFOvcht8U/AV1s03kbxG+DjwN9TXWohYoLCrVWpuUVNkNqrkbJSjDmbojp9dy+KE/gg8GKy63UXysSrV0yazM9RnN2nkRUvTuB95BiMSXSMOQ7PmOYxQY5/OiotZ6nOqNsoUSfqmtXe2GgcI1AOooDiHDoYegvPj6CTfTwX7wHFyHwGeCnqC9aJjCO3y27kLx8mF1uL71k8TsMH3kkTX2RI9pLLE8SJZTea6F8BfL/wmejzVMH/0/XwYSROTwFumZ6LmIsBqjN4jDHNYR/ykEySM64nkWUKGltmZGr1tzQWW6DKRQ/6TRaoDrCLA2+28J7LgH9GAeOdKp6KPBdZog6SxVE/sh4U3Sy9aPILUdEJFppZsrVwPxKAUQvrfcBfk8VT0QwdPn+zNqLa/peBZwLfRDFlSwknx5gZ0zxuIF88xpy2Iy0XaEyIwiwSai2Pd7SAKgfTSDSEKOhNj6fJB92B9Ho/8CHgEcBrWjvMprId9ex7LHBleu5adPUyT64+24lZe4No3IdQWYI+JKTegspN/Lzw3r1pOYLrGK2XYu2zz6LYwM+kxxXyPga4rlWDMmYTch1KGNqCLggjZjXasjSCBVTy5eoGra9uLKDKQa1FZR5NulvSa1NIYPwUeCLwR8BFLR9lc4lJ7wvAI4F3k33mA0hI9CNRURRRnXIM9yBX3iDwbeBPUczTcq11JnAz4bWyXFDqHuAZwJNQluNucgLC8ct8xhjTGN6alv3kc3cjLb9bqA5/aBmdMvl0O8WU60nywTWPAuNmkCvirqg+ULexo+bx99H3fQEyARfbvQxS7TfvhFioQ+Q6XW9GVqcP1vG5TnBPlomVCsQeRHFR5wCvTe8dWuUzxpiN82XgS+l+JP00Mq7zcuBzDVxf3Tg4tRzMkLPvombGHKrn9A3gJVS7HbqN8WWeezUKsH4LcBJKVe2lWkB1Qq+zUeC7qOntedQ3aY/RhsJwHc4oq4uo76MCrt8E/hh4QAvGZcxm5nrkQr81qncHOo9P0Zienx9DIq3lLCegimXTHYOxOhW0z4qTedG6F0XAil2li5WSi5+7Dqn1T6CaTt0QIL4RfgT8HmoH8BTUNLIPTYYD5D/gDNqPUephFu3r4h+0GIy+WLgVf7tYrmadXSBbv4rB/zOFbVaAS4HXAV9P36VeylTHKwJAi67mMlKvNWkvsgB+Awnz5wFnkt15xRN7Bf3OxeDzyALtLzyG6uMhjolGEOeNRlOWDM9Z8v+21RblMnhh4gJ6gXKMpxm8DbgnOo+Dzm/F/1gch5FlPVB4HMk3O9Nze8nJNp8DntW0Ua/Ccn+eTnCLtJPi5Akrn4RqMw36Co8r5NTLC4GPogOiWBPJKMPiPWjfPBbFD906vXYQWWtq60ENciQhoNY6aUxT/bvFbx+PFwrPDyGx8UvgA8D5yOKxHgviFNXpv+1iLt0W6K7K3lel20NRR/fHAvcBTi68Z54jj62+mtebfZHZjGKxI2Rh1u6L5PivxjHWbMbItfXKQBxfs3SngBpBcYgPAH6CLOvHpdciQWiBnKncSxZVsT+GyMdqNAv/FXBu84e/PMtNJFGosI/uVsX1Mof2QZxoavdHXKUuUl22Pg6OHrKlYwG5py5BTX8vAb6FDrDLmvUFuoTrgTeiwqF3RRPeg6i+ghtH+z9a2exHAfgRnA9HWhSK5SGWmkxqWwREIGTR8hR/+m8hIfy/KOh/vexIY2y3eILq9P8yWCyawYXpdot0uyNwNnAXdAyNUt2CooJ+m6XOkQs1t422mBii8ft9Av1XDlOOtk9xnmyFgArr7iHyBVhZ6Ma5NpJhdqIuAR8kW3nHkTWpgo7F+E9BvnCdJJcm2Yv+i1ejYrlfafroV6Aey0nRvLpZqY27gSyOwuoA2ZUXr8+QXUsXoXTOryLrxDj1uRxGcDZWLfuBT6EJbxhlWN0HuDO6upklH7c70e9SewwvUN0Kp5bilVH8/uF2DTERZRWmgfcD/45inRrBODk2rN3tRubQMT5D9we2/zzdPoZ6Eu5EgednINF+c3S8zJEtkXGij75cxVYTsPHfb56l4wTDkrJeTkjraPfxFf+1yDpu1TmvLN+/6PbvhJjO9RI18G6PLPO3J7vi+qnOoo2SPZDF0xXATZCx4bG0Ke6pyFICagTV3/keCvg6TGfW3mkksZ8W0QEQE3T01dqH/vD70/39KHtsD0pT/zX1iaVRdAIeLzxn8bQ8B9PtBcgydQoSUfcAbof+nD3kk1PE8kRhy3i+1sII1S67WvageKavAz8Dvoh+p0ZmdN0UWdx+QvvdZv1IQO2ju5MZlmI/8KbC4+OBG6fb0UjAn0qOxxtOy7AaFavPr5cBFBt5AroaH0/PbzRO7mIUb7l9lfc1myEkQgdQzOAQrTnvXYrCAlreQ62GQTS3hEWsGzkJzYPx/X4PZSM/DF2YRDeOw+SSL5AvhG9AFzP/iCxPQVsNDCup3TBZF4O3NjPhhltEVyzdeqB3E7dOtzujSe4OaOID/YYT6MS9g+pA8ghkjJiMi9PtQnRhcSW51UojGEXH1VInghHaX418P7Ls9SFRt9mJk/tygnk71VaojVo49gPHIuHeaE5haetWK6mgfXkMrS9sWobvP4/mkxG0Dy5t73CaynHIQBPsAn4LZcQ+huzNKcbmfQ+V73kb1efIZv0n6qabzYXGLMVOVA18J7ryHCVXO59GV/gH0Altguy2auVVznaWL7BpzEZZrdxDGWjmGB0W0X6OJzf/3YkuEkAXszdHQnIPKnwbx0Hxd/NvaIwxZl2stUZYmQKljYHlOwcYY4wxxhhjjDHGGGOMMcYYY8x6+P8A72COo6+CeJ0AAAAASUVORK5CYII=" alt="The Butlr">
     </div>
-    <button class="btn btn-invert btn-sm" onclick="openModal()">Try Me For Free</button>
+    <button class="btn btn-invert btn-sm" onclick="openModal()">Apply now</button>
   </div>
 </nav>
 
@@ -496,7 +552,7 @@
   <div class="hero-inner">
     <span class="eyebrow"><span class="pulse-dot"></span> Built by hospitality owners, for hospitality owners</span>
     <h1>Capture the stay when it matters most.</h1>
-    <p class="sub">The maintenance issue, the 2am question, the missed upsell — The Butlr™ handles it for you, before it lands as a review.</p>
+    <p class="hero-descriptor">AI concierge and operator intelligence for short-term rental operators.</p>
     <div class="hero-demo" aria-hidden="true">
       <div class="demo-chat">
         <div class="demo-chat-head">
@@ -514,6 +570,60 @@
       </div>
     </div>
     <div class="demo-label">Example of what Ava shows your guests — illustrative</div>
+  </div>
+</section>
+
+<section class="section" id="what-we-do">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">What We Do</span>
+      <h2>What The Butlr™ Does For Your Business</h2>
+      <p>An embedded platform that prioritises revenue optimisation and operational efficiency — with exceptional guest experience as the natural outcome.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="do-col">
+        <div class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Revenue Intelligence</h3>
+          <p>A guest asks about checkout time — Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
+          <span class="chip">Business Growth</span>
+        </div>
+        <div class="proof-chip proof-chip--revenue">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Upsell booked in the same reply</span>
+        </div>
+      </div>
+      <div class="do-col">
+        <div class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Risk Prevention</h3>
+          <p>A guest mentions a dripping tap, in passing — Ava flags it to your team, who sort it that same day, not after it's already in a review.</p>
+          <span class="chip">Fixed Before Checkout</span>
+        </div>
+        <div class="proof-chip proof-chip--risk">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="currentColor"/></svg>
+          <span>Sorted by your team before checkout</span>
+        </div>
+      </div>
+      <div class="do-col">
+        <div class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Business Intelligence</h3>
+          <p>A dozen guests this month asked Ava about breakfast options nearby — that's a signal to launch an in-room breakfast add-on, not just directions to a cafe.</p>
+          <span class="chip">Revenue Signal</span>
+        </div>
+        <div class="proof-chip proof-chip--intel">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="11" width="4" height="7" rx="1" fill="currentColor" opacity="0.5"/><rect x="9" y="7" width="4" height="11" rx="1" fill="currentColor" opacity="0.7"/><rect x="16" y="3" width="4" height="15" rx="1" fill="currentColor"/></svg>
+          <span>One pattern, a new add-on to sell</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -553,57 +663,85 @@
   </div>
 </section>
 
-<section class="section" id="what-we-do">
+<section class="section" id="operator-view">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="tag">What We Do</span>
-      <h2>What The Butlr™ Does For Your Business</h2>
-      <p>An embedded platform that prioritises revenue optimisation and operational efficiency — with exceptional guest experience as the natural outcome.</p>
+      <span class="tag">The Operator View</span>
+      <h2>Your side of it.</h2>
+      <p>Every guest message, sorted, escalated and counted — in one place, not six inboxes.</p>
     </div>
-    <div class="grid-3 reveal">
-      <div class="do-col">
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Revenue Intelligence</h3>
-          <p>A guest asks about checkout time — Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
-          <span class="chip">Business Growth</span>
+    <div class="op-visual reveal">
+      <div class="op-panel">
+        <div class="op-panel-head">
+          <span class="op-panel-title">Requests</span>
+          <span class="op-panel-live"><span class="dot"></span>Live</span>
         </div>
-        <div class="proof-chip proof-chip--revenue">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Add-on booked in the same reply — no back-and-forth</span>
-        </div>
+        <ul class="op-req-list">
+          <li class="op-req op-req--escalated">
+            <span class="op-req-main">
+              <span class="op-req-unit">Unit 12 · Riverside Mews</span>
+              <span class="op-req-text">Guest reports a dripping tap in the bathroom</span>
+            </span>
+            <span class="op-req-status op-req-status--escalated">Escalated</span>
+          </li>
+          <li class="op-req op-req--pending">
+            <span class="op-req-main">
+              <span class="op-req-unit">Flat 9 · Riverside Mews</span>
+              <span class="op-req-text">Ava flagged an airport transfer, £35 — awaiting your approval</span>
+            </span>
+            <span class="op-req-status op-req-status--pending">Pending approval</span>
+          </li>
+          <li class="op-req">
+            <span class="op-req-main">
+              <span class="op-req-unit">Unit 3 · Riverside Mews</span>
+              <span class="op-req-text">Early check-in requested — flight lands 10am</span>
+            </span>
+            <span class="op-req-status op-req-status--done">Approved</span>
+          </li>
+          <li class="op-req">
+            <span class="op-req-main">
+              <span class="op-req-unit">Flat 7A · Northgate House</span>
+              <span class="op-req-text">Extra parking permit requested for the week</span>
+            </span>
+            <span class="op-req-status op-req-status--done">Resolved</span>
+          </li>
+          <li class="op-req">
+            <span class="op-req-main">
+              <span class="op-req-unit">Flat 2 · Northgate House</span>
+              <span class="op-req-text">Heating not working — engineer booked for today</span>
+            </span>
+            <span class="op-req-status op-req-status--done">Resolved</span>
+          </li>
+        </ul>
       </div>
-      <div class="do-col">
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Risk Prevention</h3>
-          <p>A guest mentions a dripping tap, in passing — Ava flags it to your team, who sort it that same day, not after it's already in a review.</p>
-          <span class="chip">Fixed Before Checkout</span>
+      <div class="op-panel op-panel-stats">
+        <div class="op-panel-head">
+          <span class="op-panel-title">This Month</span>
         </div>
-        <div class="proof-chip proof-chip--risk">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="currentColor"/></svg>
-          <span>Sorted by your team before checkout</span>
+        <div class="op-stat">
+          <span class="op-stat-value">£1,180</span>
+          <span class="op-stat-label">Revenue facilitated</span>
         </div>
-      </div>
-      <div class="do-col">
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Business Intelligence</h3>
-          <p>A dozen guests this month asked Ava about breakfast options nearby — that's a signal to launch an in-room breakfast add-on, not just directions to a cafe.</p>
-          <span class="chip">Revenue Signal</span>
+        <div class="op-stat">
+          <span class="op-stat-value">7</span>
+          <span class="op-stat-label">Issues caught before checkout</span>
         </div>
-        <div class="proof-chip proof-chip--intel">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="11" width="4" height="7" rx="1" fill="currentColor" opacity="0.5"/><rect x="9" y="7" width="4" height="11" rx="1" fill="currentColor" opacity="0.7"/><rect x="16" y="3" width="4" height="15" rx="1" fill="currentColor"/></svg>
-          <span>One pattern, a new add-on to sell</span>
+        <div class="op-stat">
+          <span class="op-stat-value">42</span>
+          <span class="op-stat-label">Guest questions answered</span>
         </div>
       </div>
     </div>
+    <div class="op-insight-panel">
+      <span class="op-insight-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div class="op-insight-body">
+        <span class="op-insight-label">Pattern spotted</span>
+        <p class="op-insight-text">12 of this month's guest questions were about breakfast options nearby — a recurring pattern worth turning into an in-room breakfast add-on, not just a direction to a cafe.</p>
+      </div>
+    </div>
+    <div class="op-caption">The operator view — illustrative</div>
   </div>
 </section>
 
@@ -620,45 +758,95 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-11.86 7.8L4 21l1.7-5.14A8.5 8.5 0 1 1 21 11.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </div>
         <span class="n">01</span>
-        <h3>Guest Interacts</h3>
-        <p>Your guests use our digital concierge for seamless check-in, requests, and personalised recommendations.</p>
+        <h3>Your guests ask</h3>
+        <p>Check-in details, the wifi code, somewhere to eat, a problem in the flat. Ava answers instantly, in your voice, with no app to download.</p>
       </div>
       <div class="step">
         <div class="icon-badge">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4M12 18v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M2 12h4M18 12h4M4.2 19.8L7 17M17 7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
         <span class="n">02</span>
-        <h3>We Analyse</h3>
-        <p>Every interaction feeds the platform, building guest profiles and identifying revenue opportunities across your properties.</p>
+        <h3>Every answer becomes a signal</h3>
+        <p>Questions, requests and complaints are logged, categorised and tied to the unit they came from — not buried in a WhatsApp thread nobody reads twice.</p>
       </div>
       <div class="step">
         <div class="icon-badge">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 15l5-5 4 3 7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <span class="n">03</span>
-        <h3>You Profit</h3>
-        <p>Receive actionable insights, automated upsells, and operational recommendations that directly increase your bottom line.</p>
+        <h3>You act before it costs you</h3>
+        <p>Issues reach your team while the guest is still on site. Patterns reach you before they become a run of bad reviews.</p>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section" id="founder">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Message From The Founder</span>
+      <h2>Why I built this</h2>
+    </div>
+    <div class="founder-quote reveal">
+      <svg class="founder-mark" width="34" height="26" viewBox="0 0 34 26" fill="none" aria-hidden="true"><path d="M0 26V15.6C0 6.4 5.6 1 14.4 0L15.6 3.4C9.6 5 7 8.2 7 13H14.4V26H0ZM19.4 26V15.6C19.4 6.4 25 1 33.8 0L35 3.4C29 5 26.4 8.2 26.4 13H33.8V26H19.4Z" fill="currentColor"/></svg>
+      <blockquote>
+        <p>I've managed short-term rental properties across the UK — everything from city apartments to multi-million-pound estates. Every problem The Butlr solves is one I was solving by hand at 11pm.</p>
+        <p>The Butlr is the direct response to those problems — not a guess at what operators might need.</p>
+      </blockquote>
+      <cite>— Usman, Founder, The Butlr Concierge Ltd</cite>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="data-privacy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Data &amp; Privacy</span>
+      <h2>Your guests' data, handled properly.</h2>
+    </div>
+    <ul class="privacy-points reveal">
+      <li>
+        <span class="privacy-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>UK GDPR compliant. Guests accept our terms and yours separately, at first login.</span>
+      </li>
+      <li>
+        <span class="privacy-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Your data is isolated from every other operator on the platform.</span>
+      </li>
+      <li>
+        <span class="privacy-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>ICO registered: <strong>ZC071802</strong>.</span>
+      </li>
+      <li>
+        <span class="privacy-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Data Processing Agreement available before you sign anything.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap closing-cta reveal">
-    <h2>See what The Butlr™ catches on your next stay.</h2>
-    <p>Free 1-month pilot. No card, no long-term commitment — just your first property live and reporting within days.</p>
+    <h2>See what The Butlr™ catches.</h2>
+    <p>We're onboarding a small number of founding partners — set up with you, not handed to you.</p>
     <div class="actions">
-      <button class="btn btn-solid" onclick="openModal()">Try Me For Free <span aria-hidden="true">→</span></button>
+      <button class="btn btn-solid" onclick="openModal()">Apply for founding partner access <span aria-hidden="true">→</span></button>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <span>© The Butlr™</span>
-    <div style="display:flex; gap:20px; align-items:center;">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+  <div class="wrap footer-grid">
+    <div class="footer-col">
+      <p class="footer-legal">The Butlr Concierge Ltd · Registered in England &amp; Wales, company no. 16620604</p>
+      <p class="footer-legal">Registered office: 4 Mornington Villas, Bradford BD8 7HB</p>
+      <p class="footer-legal">ICO registered: ZC071802</p>
+    </div>
+    <div class="footer-col footer-col-links">
+      <p class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="/terms.html">Terms of Use</a><span aria-hidden="true">·</span><a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+      </p>
+      <p class="footer-note">Data Processing Agreement available on request.</p>
     </div>
   </div>
 </footer>
@@ -669,8 +857,8 @@
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
 
     <div data-mstep="q1">
-      <div class="modal-head"><span class="step-tag">Question 1 of 6</span></div>
-      <div class="progress-track"><div class="progress-fill" style="width:16.6%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 1 of 7</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:14.3%"></div></div>
       <h3 class="q-title">Where do you operate?</h3>
       <p class="q-sub">We're validating in one market before we go further.</p>
       <div class="options">
@@ -680,8 +868,8 @@
     </div>
 
     <div data-mstep="q2">
-      <div class="modal-head"><span class="step-tag">Question 2 of 6</span><button class="back-link" onclick="goTo('q1')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:33.3%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 2 of 7</span><button class="back-link" onclick="goTo('q1')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:28.6%"></div></div>
       <h3 class="q-title">How many units or properties do you currently manage?</h3>
       <p class="q-sub">Include everything you actively operate, across all listings.</p>
       <div class="options">
@@ -694,23 +882,24 @@
     </div>
 
     <div data-mstep="q3">
-      <div class="modal-head"><span class="step-tag">Question 3 of 6</span><button class="back-link" onclick="goTo('q2')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:50%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 3 of 7</span><button class="back-link" onclick="goTo('q2')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:42.9%"></div></div>
       <h3 class="q-title">What do you use to manage bookings today?</h3>
       <p class="q-sub">Helps us gauge how fast we can get you connected.</p>
       <div class="options">
-        <button class="option" data-q="pms" data-v="eviivo">eviivo <span class="arrow">→</span></button>
         <button class="option" data-q="pms" data-v="guesty">Guesty <span class="arrow">→</span></button>
-        <button class="option" data-q="pms" data-v="lodgify">Lodgify <span class="arrow">→</span></button>
         <button class="option" data-q="pms" data-v="hostaway">Hostaway <span class="arrow">→</span></button>
+        <button class="option" data-q="pms" data-v="lodgify">Lodgify <span class="arrow">→</span></button>
         <button class="option" data-q="pms" data-v="smoobu">Smoobu <span class="arrow">→</span></button>
-        <button class="option" data-q="pms" data-v="other">Something else / spreadsheets <span class="arrow">→</span></button>
+        <button class="option" data-q="pms" data-v="eviivo">eviivo <span class="arrow">→</span></button>
+        <button class="option" data-q="pms" data-v="other-pms">A different PMS not listed here <span class="arrow">→</span></button>
+        <button class="option" data-q="pms" data-v="none">No PMS — spreadsheets / manual <span class="arrow">→</span></button>
       </div>
     </div>
 
     <div data-mstep="q4">
-      <div class="modal-head"><span class="step-tag">Question 4 of 6</span><button class="back-link" onclick="goTo('q3')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:66.6%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 4 of 7</span><button class="back-link" onclick="goTo('q3')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:57.1%"></div></div>
       <h3 class="q-title">What eats the most time right now?</h3>
       <p class="q-sub">Pick the one that costs you the most, most weeks.</p>
       <div class="options">
@@ -723,8 +912,8 @@
     </div>
 
     <div data-mstep="q5">
-      <div class="modal-head"><span class="step-tag">Question 5 of 6</span><button class="back-link" onclick="goTo('q4')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:83.3%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 5 of 7</span><button class="back-link" onclick="goTo('q4')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:71.4%"></div></div>
       <h3 class="q-title">How do guests currently reach you?</h3>
       <p class="q-sub">Wherever most of the noise comes in.</p>
       <div class="options">
@@ -736,8 +925,8 @@
     </div>
 
     <div data-mstep="q6">
-      <div class="modal-head"><span class="step-tag">Question 6 of 6</span><button class="back-link" onclick="goTo('q5')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 6 of 7</span><button class="back-link" onclick="goTo('q5')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:85.7%"></div></div>
       <h3 class="q-title">If accepted, how soon could you have a property ready to onboard?</h3>
       <p class="q-sub">Be honest — this just sets our timeline, not your score.</p>
       <div class="options">
@@ -748,12 +937,26 @@
       </div>
     </div>
 
+    <div data-mstep="q7">
+      <div class="modal-head"><span class="step-tag">Question 7 of 7</span><button class="back-link" onclick="goTo('q6')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      <h3 class="q-title">Last one — what would you expect this to cost?</h3>
+      <p class="q-sub">No wrong answer, and it won't affect your application. We're calibrating, and operators tell us better than spreadsheets do.</p>
+      <div class="options">
+        <button class="option" data-q="budget" data-v="under-15">Under £15 per unit, per month <span class="arrow">→</span></button>
+        <button class="option" data-q="budget" data-v="15-25">£15–25 per unit, per month <span class="arrow">→</span></button>
+        <button class="option" data-q="budget" data-v="25-40">£25–40 per unit, per month <span class="arrow">→</span></button>
+        <button class="option" data-q="budget" data-v="40-plus">£40+ per unit, per month <span class="arrow">→</span></button>
+        <button class="option" data-q="budget" data-v="no-idea">No idea — tell me <span class="arrow">→</span></button>
+      </div>
+    </div>
+
     <div data-mstep="result-qualified">
       <span class="result-badge badge-good">● Strong fit</span>
       <h2 class="r-title">You're exactly who we built this for.</h2>
       <p class="r-body">Based on your answers, you're in the range we're piloting with right now — and we'd like to bring you in.</p>
       <ul class="summary-list" id="summaryQualified"></ul>
-      <p class="fine">Next: a two-minute application. We review every one personally — no forms sent into a void.</p>
+      <p class="fine">Next: a 60-second application. We review every one personally — no forms sent into a void.</p>
       <div class="actions" style="margin-top:18px;">
         <button class="btn btn-solid btn-block" onclick="goTo('apply')">Start free pilot application <span aria-hidden="true">→</span></button>
       </div>
@@ -861,7 +1064,7 @@
 <script>
 (function(){
   var RECIPIENT = "hello@thebutlr.com";
-  var answers = {country:null, units:null, pms:null, pain:null, channels:null, readiness:null};
+  var answers = {country:null, units:null, pms:null, pain:null, channels:null, readiness:null, budget:null};
   var overlay = document.getElementById("modalOverlay");
 
   window.openModal = function(){
@@ -869,7 +1072,7 @@
     // answers from a prior attempt (e.g. an early-exit path skipped
     // questions whose old values would otherwise leak into a new
     // waitlist/application email body).
-    answers = {country:null, units:null, pms:null, pain:null, channels:null, readiness:null};
+    answers = {country:null, units:null, pms:null, pain:null, channels:null, readiness:null, budget:null};
     document.querySelectorAll(".option.selected").forEach(function(el){ el.classList.remove("selected"); });
     overlay.classList.add("open");
     goTo("q1");
@@ -884,10 +1087,11 @@
     var map = {
       country:{uk:"United Kingdom", other:"Outside the UK"},
       units:{"1-2":"1–2 units","3-10":"3–10 units","11-20":"11–20 units","21-50":"21–50 units","50+":"50+ units"},
-      pms:{eviivo:"eviivo", guesty:"Guesty", lodgify:"Lodgify", hostaway:"Hostaway", smoobu:"Smoobu", other:"Something else / spreadsheets"},
+      pms:{guesty:"Guesty", hostaway:"Hostaway", lodgify:"Lodgify", smoobu:"Smoobu", eviivo:"eviivo", "other-pms":"A different PMS not listed here", none:"No PMS — spreadsheets / manual"},
       pain:{"repeat-questions":"Repeat guest questions","catch-issues":"Catching issues before reviews","upsell":"Spotting upsell opportunities","visibility":"Visibility across properties","mix":"A bit of everything"},
-      channels:{whatsapp:"Mostly WhatsApp/SMS", email:"Mostly email", platform:"Mostly Airbnb/Booking.com", all:"A mix of everything"},
-      readiness:{week:"This week", fortnight:"Within 2 weeks", month:"Within a month", exploring:"Just exploring"}
+      channels:{whatsapp:"Mostly WhatsApp/SMS", email:"Mostly email", platform:"Mostly Airbnb/Booking.com", all:"A mix across all of the above"},
+      readiness:{week:"This week", fortnight:"Within 2 weeks", month:"Within a month", exploring:"Just exploring"},
+      budget:{"under-15":"Under £15 per unit, per month", "15-25":"£15–25 per unit, per month", "25-40":"£25–40 per unit, per month", "40-plus":"£40+ per unit, per month", "no-idea":"No idea — tell me"}
     };
     return (map[q] && map[q][v]) || v;
   }
@@ -925,7 +1129,8 @@
     }
     var map = {pms:"q4", pain:"q5", channels:"q6"};
     if(map[q]){ goTo(map[q]); return; }
-    if(q === "readiness"){ showResult(); }
+    if(q === "readiness"){ goTo("q7"); return; }
+    if(q === "budget"){ showResult(); }
   }
 
   function classify(){
@@ -942,7 +1147,8 @@
       row("Booking system", labelFor("pms", answers.pms)) +
       row("Biggest pain", labelFor("pain", answers.pain)) +
       row("Main guest channel", labelFor("channels", answers.channels)) +
-      row("Ready to onboard", labelFor("readiness", answers.readiness));
+      row("Ready to onboard", labelFor("readiness", answers.readiness)) +
+      row("Budget expectation", labelFor("budget", answers.budget));
   }
   function row(k,v){ return '<li><span class="k">'+k+'</span><span class="v">'+v+'</span></li>'; }
 
@@ -956,7 +1162,8 @@
       ["Booking system", "pms", answers.pms],
       ["Biggest current pain", "pain", answers.pain],
       ["Main guest channel", "channels", answers.channels],
-      ["Ready to onboard", "readiness", answers.readiness]
+      ["Ready to onboard", "readiness", answers.readiness],
+      ["Budget expectation", "budget", answers.budget]
     ];
     return rows
       .filter(function(r){ return r[2] !== null && r[2] !== undefined; })
