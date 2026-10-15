@@ -550,8 +550,8 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="eyebrow"><span class="pulse-dot"></span> Built by hospitality owners, for hospitality owners</span>
-    <h1>Capture the stay when it matters most.</h1>
+    <span class="eyebrow"><span class="pulse-dot"></span> Built by operators, for operators.</span>
+    <h1>Capture the stay, where it matters most.</h1>
     <p class="hero-descriptor">AI concierge and operator intelligence for short-term rental operators.</p>
     <div class="hero-demo" aria-hidden="true">
       <div class="demo-chat">
@@ -641,6 +641,7 @@
         <span class="kicker">Guest-facing</span>
         <h3>Ava, your digital concierge</h3>
         <p>A concierge in their pocket from booking to checkout — instant answers, local recommendations, and a direct line to your team when it matters. No app download, no waiting on WhatsApp.</p>
+        <p>Tap to speak to Ava. Guests can talk, not just type. Instant answers, day or night, with a direct line to your team when it matters.</p>
         <div class="card-signal">
           <span class="dot"></span>
           <span class="lbl">Live for every guest, every stay</span>
@@ -958,7 +959,7 @@
       <ul class="summary-list" id="summaryQualified"></ul>
       <p class="fine">Next: a 60-second application. We review every one personally — no forms sent into a void.</p>
       <div class="actions" style="margin-top:18px;">
-        <button class="btn btn-solid btn-block" onclick="goTo('apply')">Start free pilot application <span aria-hidden="true">→</span></button>
+        <button class="btn btn-solid btn-block" onclick="goTo('apply')">Apply for founding partner access <span aria-hidden="true">→</span></button>
       </div>
     </div>
 
@@ -998,9 +999,9 @@
     </div>
 
     <div data-mstep="apply">
-      <div class="modal-head"><span class="step-tag">Free pilot application</span><button class="back-link" onclick="goTo('result-qualified')">‹ Back</button></div>
+      <div class="modal-head"><span class="step-tag">Founding partner application</span><button class="back-link" onclick="goTo('result-qualified')">‹ Back</button></div>
       <h3 class="q-title">Tell us where to send the details.</h3>
-      <p class="q-sub">One-month pilot, full product, no card and no obligation. We reply within 2 business days.</p>
+      <p class="q-sub">Founding partner pilot. Discounted pricing for our first operators, with setup done alongside you. No payment to apply. We reply within 2 business days.</p>
       <form id="applyForm" novalidate>
         <div class="field-row">
           <div class="field" data-field="name"><label>Full name <span class="req">*</span></label><input type="text" name="name" autocomplete="name" required><div class="err">Please enter your name.</div></div>
@@ -1264,7 +1265,7 @@
     if(!ok) return;
 
     var subject = "Pilot application - " + values.business;
-    var body = "Hi Butlr™ team,\n\nI'd like to apply for the free 1-month pilot.\n\n" +
+    var body = "Hi Butlr™ team,\n\nI'd like to apply for the founding partner pilot.\n\n" +
       "Name: " + values.name + "\n" + "Email: " + values.email + "\n" +
       "Business: " + values.business + "\n" + "Phone: " + (values.phone || "-") + "\n" +
       "City/region: " + values.city + "\n\n" + buildAnswerBlock() + "\n\n" +
