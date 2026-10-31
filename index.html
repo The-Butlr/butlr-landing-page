@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Butlr™ — AI Guest Concierge & Operator Intelligence for Short-Term Rentals</title>
+<title>The Butlr™: AI Guest Concierge & Operator Intelligence for Short-Term Rentals</title>
 <meta name="description" content="The Butlr is an AI-powered guest concierge and operator intelligence layer for short-term rental and serviced accommodation businesses. Reduce guest admin, catch issues during the stay, and turn guest interactions into revenue and insight.">
 <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAAfAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAeZJREFUeJxjZIACDgPZ/wwkgB8XHjMyMDAwMJGjGVkPIzmakQETugAzI9NfRgaG/xa6+pc39U09mxkcflBUUPA1XAMT0z+8BjAyMv7/z8DAGOLk+t7Vxt64OT3PfN+0ud9LYhIP8HBxff337x8TTgOYmZj//mdgYGRnZf1pZ2Ai9fHt2y+fv339IiYgJNycmeewa9KsJ5Z6BpdwGvD331/mv//+MvvY2p9Tl1dQ+vnr1y9WFmaWX3/+/nr28sUrQ3Ut9YbkLJQwY0HmtGcVHHzz4f3/MFdP6R+/f39HluPk4OB4/ubN6+oZE1H0oLjAz85J6cv370z7Tp14xicgwM3Oysr258/fv79+//4twMPLN2HFomtnrl/VxmnAoq0b71rpGbBWTp9gn95YfeTjt6+fxYSFhaUkJMTuPHn4cOb6VRbosYCSDpiZmP+uaOk+qygrKxRZXcz88PlzaW9ru3O+9k5/nzx/9rt3+SKDL1+/8f7995cZqwv+/f/HFFpVZLbz2JGnB2ctEl7U0Hb+37//DJ3zZ0maa+sJducWX0XWjOECRkbG/////2dkYGBg0FRQvJsaEPrUStdA4i/D/393Hj183zZ/lvitxw8VYWowDCAHMMFyFTngx4XHjEwwBjmaGRgYGADEINOVOrBi4QAAAABJRU5ErkJggg==" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE+0lEQVR4nMWXa0xURxTH58zclQV24cougpXFokixuAS7oqRIBOMj0sba1KTapo311VbTxlabtLapMbXWaGq1hg/G1KRS64M2MbGxlCjZ+ogguEJRRBTBgvJa9nkXdvfememHdlOL3F2wAf8f557c/+/MnHvOHUBDSJtj4kOt/1/569ph8Np/FkbLOBwIHmvzwV54rM0HQ+BIgaMteBLZPyxhJMEYY8YYw+kpqW3LCue3tXS0R1Vd/2NKp703CSGEAIBjwIwySkYFIKSvNm7qeXH+wkKvy9Vvdzud5201F4+Wn9FdqLuaQzklGANDCBBjLOIRD/sIQtmbkpIfXDr0gxYhQJxzFDVOGBerjY6VFSpfqL/acODEUXS2psqCEEIEExppN4ZdhBiAAQCfM8N8T9TpRcYZJwSwrFDZ4fE4pYF+qSBnlvnkzr3mE19+XZ2TkXmTMkoAIQ4AqkkOG4BzDpxzWJCbRxFCCP5pYgAICMEYY8BenyR5B/qlxXn5lvL9B02frX7bijGhnPNHOuCIAACAM86xURzfV2TJm+rzD/gwxo+8lBCMCQbslrweWVHkT9e8W1i6fWdtXEysd8QAAMAFIigYY0YAU845rFxUfD1lQtLEQFAOAiDVrAjBGCGEOnu6el8uWpi3dfU6m1qs6lfAOQeFKn8/xxjF6/Xu9cuWT5H6JV/IIJwAEBBMyIDfH2y+16Yar/rANCH5wba1G6yznzVfZ4zhj15fVTdlUoppICD7w2UfkqJQahTFhJ/PVdQcPn2qQBVU7TPc8c57v29+a908h93uLvnp2LUNr6zI4Rzx4Zgzxpk2Kkrb0d3ZVbRhjcHjk+LUClF1ByYlJml6urodLknyVjXUx9maGlsMojhelhUlEgBCCAmYCB/u2+12S954DJipxakC3O/pkvUxMbp9x47cray98tzqHZ9Prqi6VJucmGhkCDFK2ZAvpZQxUacTyyoraqy22pmRmpEqQMWVy/G9Lmffm8VLE5MNxm67y2lcsXXLjN3ff2fVaqK0cTqdnjHOKGWMc/TvfCcY+/x+3/7jR5IAgCMevtGqAlyst2Wfvmi9PWt61vTjO/bYJydP7PDLQe22QyWFS7dsbKmsraqLjY6OHa/XiwIhAmWcBYJyMCYqOsZqq2lsbL2bDgCccha2FasWIQBwoyj2HftiT2e+JdfcdOd26ycl39jLqy7lhmKKLLnXXlv0Qv/cHEtassFoxBiEcXF6vGT9qmtWW81MDSGyTKnmsQBCwyftqUntpdt3+SxZ5kyPx+U7XlFuO3DyR9Odjj+fDsUmJRh6ZmZk3suamu6baEzEtpuN5PKN+tTW+/dNAMDDteKw0zAEYYgXHd9u/rh5aUHRHEEQoL27u+uU9eytssoKo63pZubDRZadntFcXVqW4XI4vO/v3dVQdu6358MVYsRxHIJACKG1Ly0/v2nlG2lTTakmJAjI43T46ptvtVxpbHA2tbWSbodDu2Lh4kBx/rxsjUaj+WDvrtrSX0/PFQhRFEqH7LrD+h8IjVPOOUxISOh9dcGSxuL8gvistPTURIMhAWk0CAUCaCAQCEr+fsnt9UilZ365u7v0cOHDCTw2QEiDtzJ72jNNs7PMPdNSTDw2OgYrVOGd9j5mvVptqL7RYI50/iMGGA3hoa5LYyV/XTs88XsBDpGMtXHIEw9eGEtzhNDQs30sr+d/AamWY/UZoHxRAAAAAElFTkSuQmCC">
 <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
-<meta property="og:title" content="The Butlr — AI Concierge for Short-Term Rentals">
+<meta property="og:title" content="The Butlr: AI Concierge for Short-Term Rentals">
 <meta property="og:description" content="An AI guest concierge and operator intelligence layer that reduces guest admin, catches issues in real time, and surfaces revenue opportunities for short-term accommodation operators.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thebutlr.com/">
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://thebutlr.com/og-image.png">
-<meta name="twitter:title" content="The Butlr — AI Concierge for Short-Term Rentals">
+<meta name="twitter:title" content="The Butlr: AI Concierge for Short-Term Rentals">
 <meta name="twitter:description" content="An AI guest concierge and operator intelligence layer for short-term rental operators.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thebutlr.com/">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L8GRY9W8N"></script>
-<script>
+<!-- Google tag (gtag.js) -- consent-gated: this only runs after the visitor accepts
+     the "Analytics" category in the cookie banner below. See the ButlrConsent
+     script near the end of <body> for the activation logic. Until then, these
+     tags are type="text/plain" so the browser neither executes nor fetches them. -->
+<script type="text/plain" data-category="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-1L8GRY9W8N"></script>
+<script type="text/plain" data-category="analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-1L8GRY9W8N');
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --primary:#08301d;
@@ -52,6 +52,13 @@
     --status-red:#e2665a;
     --status-green:#34c281;
   }
+  /* Inter, self-hosted (previously loaded from fonts.googleapis.com / fonts.gstatic.com --
+     removed so no font request is sent to Google before, or regardless of, cookie consent). */
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url("/assets/fonts/inter-300.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/inter-400.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/inter-500.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/inter-600.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/inter-700.woff") format("woff");}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
@@ -63,6 +70,12 @@
   }
   a{color:inherit;}
   button{font-family:inherit;}
+  .skip-link{
+    position:absolute; left:8px; top:-48px; z-index:1000;
+    background:var(--primary); color:#fff; padding:10px 18px; border-radius:var(--radius-md);
+    font-size:14px; font-weight:600; text-decoration:none; transition:top .15s ease;
+  }
+  .skip-link:focus{top:8px;}
   h1,h2,h3{font-weight:700; letter-spacing:-0.025em; margin:0; text-wrap:balance;}
   .wrap{max-width:1120px; margin:0 auto; padding:0 40px;}
   @media (max-width:720px){ .wrap{padding:0 22px;} }
@@ -363,6 +376,9 @@
   .footer-links{margin:0; font-size:13.5px;}
   .footer-links a{color:#fff;}
   .footer-links span{margin:0 8px; opacity:0.5;}
+  .footer-link-btn{background:none; border:0; padding:0; margin:0; color:#fff; font:inherit; font-size:13.5px; cursor:pointer; text-decoration:underline; text-underline-offset:2px;}
+  .footer-link-btn:hover{opacity:0.85;}
+  .footer-link-btn:focus-visible{outline:2px solid #fff; outline-offset:2px;}
   .footer-note{margin:6px 0 0; font-size:12px; opacity:0.75;}
   footer a{text-decoration:none; color:inherit;}
   footer a:hover{text-decoration:underline; text-underline-offset:3px;}
@@ -484,7 +500,10 @@
     width:100%; background:#fff; border:1px solid var(--border-strong); color:var(--fg);
     padding:11px 13px; border-radius:10px; font-size:14.5px; font-family:inherit;
   }
-  .field input:focus, .field textarea:focus{outline:none; border-color:var(--primary);}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(8,48,29,0.35);}
+  .field input:focus-visible, .field textarea:focus-visible{outline:2px solid var(--primary); outline-offset:1px;}
+  .consent-note{font-size:12.5px; color:var(--muted); line-height:1.5; margin:4px 0 14px;}
+  .consent-note a{color:var(--primary-glow); text-decoration:underline;}
   .field textarea{resize:vertical; min-height:70px;}
   .field-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
   @media (max-width:480px){ .field-row{grid-template-columns:1fr;} }
@@ -508,6 +527,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div id="splash" class="splash" aria-hidden="true">
   <div class="splash-radial"></div>
   <div class="splash-particles" id="splashParticles"></div>
@@ -548,6 +568,7 @@
   </div>
 </nav>
 
+<main id="main-content">
 <section class="hero">
   <div class="hero-inner">
     <span class="eyebrow"><span class="pulse-dot"></span> Built by operators, for operators.</span>
@@ -564,12 +585,12 @@
         </div>
         <div class="demo-thread">
           <div class="demo-bubble demo-bubble-guest" id="demoGuestBubble">Is late checkout possible tomorrow?</div>
-          <div class="demo-bubble demo-bubble-ava demo-fade-out" id="demoAvaBubble" style="visibility:hidden;">Yes — confirmed for 12:30pm, no charge. Anything else before you head out?</div>
+          <div class="demo-bubble demo-bubble-ava demo-fade-out" id="demoAvaBubble" style="visibility:hidden;">Yes, confirmed for 12:30pm, no charge. Anything else before you head out?</div>
           <div class="demo-typing" id="demoTyping"><span></span><span></span><span></span></div>
         </div>
       </div>
     </div>
-    <div class="demo-label">Example of what Ava shows your guests — illustrative</div>
+    <div class="demo-label">Example of what Ava shows your guests (illustrative)</div>
   </div>
 </section>
 
@@ -578,16 +599,16 @@
     <div class="section-head reveal">
       <span class="tag">What We Do</span>
       <h2>What The Butlr™ Does For Your Business</h2>
-      <p>An embedded platform that prioritises revenue optimisation and operational efficiency — with exceptional guest experience as the natural outcome.</p>
+      <p>An embedded platform that prioritises revenue optimisation and operational efficiency, with exceptional guest experience as the natural outcome.</p>
     </div>
     <div class="grid-3 reveal">
       <div class="do-col">
         <div class="card">
-          <div class="icon-badge">
+          <div class="icon-badge" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Revenue Intelligence</h3>
-          <p>A guest asks about checkout time — Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
+          <p>A guest asks about checkout time, and Ava offers a late checkout add-on in the same reply, before you'd have thought to.</p>
           <span class="chip">Business Growth</span>
         </div>
         <div class="proof-chip proof-chip--revenue">
@@ -597,11 +618,11 @@
       </div>
       <div class="do-col">
         <div class="card">
-          <div class="icon-badge">
+          <div class="icon-badge" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Risk Prevention</h3>
-          <p>A guest mentions a dripping tap, in passing — Ava flags it to your team, who sort it that same day, not after it's already in a review.</p>
+          <p>A guest mentions a dripping tap, in passing, and Ava flags it to your team, who sort it that same day, not after it's already in a review.</p>
           <span class="chip">Fixed Before Checkout</span>
         </div>
         <div class="proof-chip proof-chip--risk">
@@ -611,11 +632,11 @@
       </div>
       <div class="do-col">
         <div class="card">
-          <div class="icon-badge">
+          <div class="icon-badge" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Business Intelligence</h3>
-          <p>A dozen guests this month asked Ava about breakfast options nearby — that's a signal to launch an in-room breakfast add-on, not just directions to a cafe.</p>
+          <p>A dozen guests this month asked Ava about breakfast options nearby: that's a signal to launch an in-room breakfast add-on, not just directions to a cafe.</p>
           <span class="chip">Revenue Signal</span>
         </div>
         <div class="proof-chip proof-chip--intel">
@@ -635,12 +656,12 @@
     </div>
     <div class="grid-2 reveal">
       <div class="card">
-        <div class="icon-badge">
+        <div class="icon-badge" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </div>
         <span class="kicker">Guest-facing</span>
         <h3>Ava, your digital concierge</h3>
-        <p>A concierge in their pocket from booking to checkout — instant answers, local recommendations, and a direct line to your team when it matters. No app download, no waiting on WhatsApp.</p>
+        <p>A concierge in their pocket from booking to checkout: instant answers, local recommendations, and a direct line to your team when it matters. No app download, no waiting on WhatsApp.</p>
         <p>Tap to speak to Ava. Guests can talk, not just type. Instant answers, day or night, with a direct line to your team when it matters.</p>
         <div class="card-signal">
           <span class="dot"></span>
@@ -648,19 +669,19 @@
         </div>
       </div>
       <div class="card">
-        <div class="icon-badge">
+        <div class="icon-badge" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <span class="kicker">Operator-facing</span>
         <h3>The intelligence layer</h3>
-        <p>Every guest interaction becomes a signal — issues flagged before they hit a review, patterns across your properties, upsell opportunities you'd otherwise miss. One dashboard, not six inboxes.</p>
+        <p>Every guest interaction becomes a signal: issues flagged before they hit a review, patterns across your properties, upsell opportunities you'd otherwise miss. One dashboard, not six inboxes.</p>
         <div class="card-signal">
           <svg width="34" height="16" viewBox="0 0 34 16" fill="none"><rect x="0" y="9" width="5" height="7" rx="1" fill="#08301d" opacity="0.35"/><rect x="8" y="5" width="5" height="11" rx="1" fill="#08301d" opacity="0.55"/><rect x="16" y="2" width="5" height="14" rx="1" fill="#08301d" opacity="0.75"/><rect x="24" y="6" width="5" height="10" rx="1" fill="#08301d"/></svg>
           <span class="lbl">Updated after every guest message</span>
         </div>
       </div>
     </div>
-    <p class="not-note reveal">Not a digital guidebook. Not a generic chatbot bolted onto your PMS. <strong>The Butlr™ sits between the two</strong> — so nothing falls through the cracks between a guest's question and your bottom line.</p>
+    <p class="not-note reveal">Not a digital guidebook. Not a generic chatbot bolted onto your PMS. <strong>The Butlr™ sits between the two</strong>, so nothing falls through the cracks between a guest's question and your bottom line.</p>
   </div>
 </section>
 
@@ -669,7 +690,7 @@
     <div class="section-head reveal">
       <span class="tag">The Operator View</span>
       <h2>Your side of it.</h2>
-      <p>Every guest message, sorted, escalated and counted — in one place, not six inboxes.</p>
+      <p>Every guest message, sorted, escalated and counted, all in one place, not six inboxes.</p>
     </div>
     <div class="op-visual reveal">
       <div class="op-panel">
@@ -688,14 +709,14 @@
           <li class="op-req op-req--pending">
             <span class="op-req-main">
               <span class="op-req-unit">Flat 9 · Riverside Mews</span>
-              <span class="op-req-text">Ava flagged an airport transfer, £35 — awaiting your approval</span>
+              <span class="op-req-text">Ava flagged an airport transfer, £35, awaiting your approval</span>
             </span>
             <span class="op-req-status op-req-status--pending">Pending approval</span>
           </li>
           <li class="op-req">
             <span class="op-req-main">
               <span class="op-req-unit">Unit 3 · Riverside Mews</span>
-              <span class="op-req-text">Early check-in requested — flight lands 10am</span>
+              <span class="op-req-text">Early check-in requested, flight lands 10am</span>
             </span>
             <span class="op-req-status op-req-status--done">Approved</span>
           </li>
@@ -709,7 +730,7 @@
           <li class="op-req">
             <span class="op-req-main">
               <span class="op-req-unit">Flat 2 · Northgate House</span>
-              <span class="op-req-text">Heating not working — engineer booked for today</span>
+              <span class="op-req-text">Heating not working, engineer booked for today</span>
             </span>
             <span class="op-req-status op-req-status--done">Resolved</span>
           </li>
@@ -739,10 +760,10 @@
       </span>
       <div class="op-insight-body">
         <span class="op-insight-label">Pattern spotted</span>
-        <p class="op-insight-text">12 of this month's guest questions were about breakfast options nearby — a recurring pattern worth turning into an in-room breakfast add-on, not just a direction to a cafe.</p>
+        <p class="op-insight-text">12 of this month's guest questions were about breakfast options nearby, a recurring pattern worth turning into an in-room breakfast add-on, not just a direction to a cafe.</p>
       </div>
     </div>
-    <div class="op-caption">The operator view — illustrative</div>
+    <div class="op-caption">The operator view (illustrative)</div>
   </div>
 </section>
 
@@ -755,7 +776,7 @@
     </div>
     <div class="steps reveal">
       <div class="step">
-        <div class="icon-badge">
+        <div class="icon-badge" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-11.86 7.8L4 21l1.7-5.14A8.5 8.5 0 1 1 21 11.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </div>
         <span class="n">01</span>
@@ -763,15 +784,15 @@
         <p>Check-in details, the wifi code, somewhere to eat, a problem in the flat. Ava answers instantly, in your voice, with no app to download.</p>
       </div>
       <div class="step">
-        <div class="icon-badge">
+        <div class="icon-badge" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4M12 18v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M2 12h4M18 12h4M4.2 19.8L7 17M17 7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
         <span class="n">02</span>
         <h3>Every answer becomes a signal</h3>
-        <p>Questions, requests and complaints are logged, categorised and tied to the unit they came from — not buried in a WhatsApp thread nobody reads twice.</p>
+        <p>Questions, requests and complaints are logged, categorised and tied to the unit they came from, not buried in a WhatsApp thread nobody reads twice.</p>
       </div>
       <div class="step">
-        <div class="icon-badge">
+        <div class="icon-badge" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 15l5-5 4 3 7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <span class="n">03</span>
@@ -791,10 +812,10 @@
     <div class="founder-quote reveal">
       <svg class="founder-mark" width="34" height="26" viewBox="0 0 34 26" fill="none" aria-hidden="true"><path d="M0 26V15.6C0 6.4 5.6 1 14.4 0L15.6 3.4C9.6 5 7 8.2 7 13H14.4V26H0ZM19.4 26V15.6C19.4 6.4 25 1 33.8 0L35 3.4C29 5 26.4 8.2 26.4 13H33.8V26H19.4Z" fill="currentColor"/></svg>
       <blockquote>
-        <p>I've managed short-term rental properties across the UK — everything from city apartments to multi-million-pound estates. Every problem The Butlr solves is one I was solving by hand at 11pm.</p>
-        <p>The Butlr is the direct response to those problems — not a guess at what operators might need.</p>
+        <p>I've managed short-term rental properties across the UK, everything from city apartments to multi-million-pound estates. Every problem The Butlr solves is one I was solving by hand at 11pm.</p>
+        <p>The Butlr is the direct response to those problems, not a guess at what operators might need.</p>
       </blockquote>
-      <cite>— Usman, Founder, The Butlr Concierge Ltd</cite>
+      <cite>Usman, Founder, The Butlr Concierge Ltd</cite>
     </div>
   </div>
 </section>
@@ -808,7 +829,7 @@
     <ul class="privacy-points reveal">
       <li>
         <span class="privacy-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>UK GDPR compliant. Guests accept our terms and yours separately, at first login.</span>
+        <span>Guests accept our terms and yours separately, at first login, under a UK data processing agreement with every operator.</span>
       </li>
       <li>
         <span class="privacy-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -829,12 +850,13 @@
 <section class="section">
   <div class="wrap closing-cta reveal">
     <h2>See what The Butlr™ catches.</h2>
-    <p>We're onboarding a small number of founding partners — set up with you, not handed to you.</p>
+    <p>We're onboarding a small number of founding partners, set up with you, not handed to you.</p>
     <div class="actions">
       <button class="btn btn-solid" onclick="openModal()">Apply for founding partner access <span aria-hidden="true">→</span></button>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap footer-grid">
@@ -845,21 +867,21 @@
     </div>
     <div class="footer-col footer-col-links">
       <p class="footer-links">
-        <a href="/privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="/terms.html">Terms of Use</a><span aria-hidden="true">·</span><a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+        <a href="/privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="/terms.html">Terms of Use</a><span aria-hidden="true">·</span><a href="/cookie-policy.html">Cookie Policy</a><span aria-hidden="true">·</span><a href="/accessibility.html">Accessibility</a><span aria-hidden="true">·</span><button type="button" class="footer-link-btn" onclick="window.ButlrConsent && ButlrConsent.open()">Cookie settings</button><span aria-hidden="true">·</span><a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
       </p>
-      <p class="footer-note">Data Processing Agreement available on request.</p>
+      <p class="footer-note">Data Processing Agreement available on request. © 2026 The Butlr Concierge Ltd.</p>
     </div>
   </div>
 </footer>
 
 <!-- ================= MODAL: quiz + application ================= -->
 <div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Check your eligibility and apply">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
 
     <div data-mstep="q1">
-      <div class="modal-head"><span class="step-tag">Question 1 of 7</span></div>
-      <div class="progress-track"><div class="progress-fill" style="width:14.3%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 1 of 6</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:16.7%"></div></div>
       <h3 class="q-title">Where do you operate?</h3>
       <p class="q-sub">We're validating in one market before we go further.</p>
       <div class="options">
@@ -869,8 +891,8 @@
     </div>
 
     <div data-mstep="q2">
-      <div class="modal-head"><span class="step-tag">Question 2 of 7</span><button class="back-link" onclick="goTo('q1')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:28.6%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 2 of 6</span><button class="back-link" onclick="goTo('q1')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:33.3%"></div></div>
       <h3 class="q-title">How many units or properties do you currently manage?</h3>
       <p class="q-sub">Include everything you actively operate, across all listings.</p>
       <div class="options">
@@ -883,8 +905,25 @@
     </div>
 
     <div data-mstep="q3">
-      <div class="modal-head"><span class="step-tag">Question 3 of 7</span><button class="back-link" onclick="goTo('q2')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:42.9%"></div></div>
+      <div class="modal-head"><span class="step-tag">Question 3 of 6</span><button class="back-link" onclick="goTo('q2')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:50.0%"></div></div>
+      <h3 class="q-title">Where did you hear about The Butlr?</h3>
+      <p class="q-sub">Helps us understand what's actually working before we spend more on it.</p>
+      <div class="options">
+        <button class="option" data-q="source" data-v="linkedin">LinkedIn <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="facebook-group">A Facebook group for operators <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="social-short-form">Instagram or TikTok <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="search">Google search <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="directory">A software directory or review site <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="referral">Someone recommended it to me <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="direct-outreach">You reached out to me directly <span class="arrow">→</span></button>
+        <button class="option" data-q="source" data-v="other-source">Somewhere else <span class="arrow">→</span></button>
+      </div>
+    </div>
+
+    <div data-mstep="q4">
+      <div class="modal-head"><span class="step-tag">Question 4 of 6</span><button class="back-link" onclick="goTo('q3')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:66.7%"></div></div>
       <h3 class="q-title">What do you use to manage bookings today?</h3>
       <p class="q-sub">Helps us gauge how fast we can get you connected.</p>
       <div class="options">
@@ -894,13 +933,13 @@
         <button class="option" data-q="pms" data-v="smoobu">Smoobu <span class="arrow">→</span></button>
         <button class="option" data-q="pms" data-v="eviivo">eviivo <span class="arrow">→</span></button>
         <button class="option" data-q="pms" data-v="other-pms">A different PMS not listed here <span class="arrow">→</span></button>
-        <button class="option" data-q="pms" data-v="none">No PMS — spreadsheets / manual <span class="arrow">→</span></button>
+        <button class="option" data-q="pms" data-v="none">No PMS (spreadsheets / manual) <span class="arrow">→</span></button>
       </div>
     </div>
 
-    <div data-mstep="q4">
-      <div class="modal-head"><span class="step-tag">Question 4 of 7</span><button class="back-link" onclick="goTo('q3')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:57.1%"></div></div>
+    <div data-mstep="q5">
+      <div class="modal-head"><span class="step-tag">Question 5 of 6</span><button class="back-link" onclick="goTo('q4')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:83.3%"></div></div>
       <h3 class="q-title">What eats the most time right now?</h3>
       <p class="q-sub">Pick the one that costs you the most, most weeks.</p>
       <div class="options">
@@ -912,9 +951,9 @@
       </div>
     </div>
 
-    <div data-mstep="q5">
-      <div class="modal-head"><span class="step-tag">Question 5 of 7</span><button class="back-link" onclick="goTo('q4')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:71.4%"></div></div>
+    <div data-mstep="q6">
+      <div class="modal-head"><span class="step-tag">Question 6 of 6</span><button class="back-link" onclick="goTo('q5')">‹ Back</button></div>
+      <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
       <h3 class="q-title">How do guests currently reach you?</h3>
       <p class="q-sub">Wherever most of the noise comes in.</p>
       <div class="options">
@@ -925,39 +964,12 @@
       </div>
     </div>
 
-    <div data-mstep="q6">
-      <div class="modal-head"><span class="step-tag">Question 6 of 7</span><button class="back-link" onclick="goTo('q5')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:85.7%"></div></div>
-      <h3 class="q-title">If accepted, how soon could you have a property ready to onboard?</h3>
-      <p class="q-sub">Be honest — this just sets our timeline, not your score.</p>
-      <div class="options">
-        <button class="option" data-q="readiness" data-v="week">This week <span class="arrow">→</span></button>
-        <button class="option" data-q="readiness" data-v="fortnight">Within 2 weeks <span class="arrow">→</span></button>
-        <button class="option" data-q="readiness" data-v="month">Within a month <span class="arrow">→</span></button>
-        <button class="option" data-q="readiness" data-v="exploring">Just exploring for now <span class="arrow">→</span></button>
-      </div>
-    </div>
-
-    <div data-mstep="q7">
-      <div class="modal-head"><span class="step-tag">Question 7 of 7</span><button class="back-link" onclick="goTo('q6')">‹ Back</button></div>
-      <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
-      <h3 class="q-title">Last one — what would you expect this to cost?</h3>
-      <p class="q-sub">No wrong answer, and it won't affect your application. We're calibrating, and operators tell us better than spreadsheets do.</p>
-      <div class="options">
-        <button class="option" data-q="budget" data-v="under-15">Under £15 per unit, per month <span class="arrow">→</span></button>
-        <button class="option" data-q="budget" data-v="15-25">£15–25 per unit, per month <span class="arrow">→</span></button>
-        <button class="option" data-q="budget" data-v="25-40">£25–40 per unit, per month <span class="arrow">→</span></button>
-        <button class="option" data-q="budget" data-v="40-plus">£40+ per unit, per month <span class="arrow">→</span></button>
-        <button class="option" data-q="budget" data-v="no-idea">No idea — tell me <span class="arrow">→</span></button>
-      </div>
-    </div>
-
     <div data-mstep="result-qualified">
       <span class="result-badge badge-good">● Strong fit</span>
       <h2 class="r-title">You're exactly who we built this for.</h2>
-      <p class="r-body">Based on your answers, you're in the range we're piloting with right now — and we'd like to bring you in.</p>
+      <p class="r-body">Based on your answers, you're in the range we're piloting with right now, and we'd like to bring you in.</p>
       <ul class="summary-list" id="summaryQualified"></ul>
-      <p class="fine">Next: a 60-second application. We review every one personally — no forms sent into a void.</p>
+      <p class="fine">Next: a 60-second application. We review every one personally, no forms sent into a void.</p>
       <div class="actions" style="margin-top:18px;">
         <button class="btn btn-solid btn-block" onclick="goTo('apply')">Apply for founding partner access <span aria-hidden="true">→</span></button>
       </div>
@@ -966,7 +978,7 @@
     <div data-mstep="result-small">
       <span class="result-badge badge-soft">● Not yet</span>
       <h2 class="r-title">Honest answer: not quite yet.</h2>
-      <p class="r-body">The pilot is built around operators running at least 3 units — below that, you won't see the full value, and we'd rather tell you that now than waste your time. This isn't a "no" forever, just a "not yet."</p>
+      <p class="r-body">The pilot is built around operators running at least 3 units; below that, you won't see the full value, and we'd rather tell you that now than waste your time. This isn't a "no" forever, just a "not yet."</p>
       <p class="fine">Leave your email and we'll come back to you the moment there's a version that fits smaller operations.</p>
       <div id="waitlistForm-small"></div>
     </div>
@@ -974,7 +986,7 @@
     <div data-mstep="result-big">
       <span class="result-badge badge-soft">● Let's talk directly</span>
       <h2 class="r-title">You're operating at real scale.</h2>
-      <p class="r-body">At your size, a self-serve application isn't the right way in — you've got requirements a form can't capture. Let's just talk.</p>
+      <p class="r-body">At your size, a self-serve application isn't the right way in; you've got requirements a form can't capture. Let's just talk.</p>
       <ul class="summary-list" id="summaryBig"></ul>
       <p class="fine">Leave your details and we'll set up a call within 1 business day.</p>
       <form id="bigForm" novalidate>
@@ -983,9 +995,10 @@
           <div class="field" data-field="email"><label>Work email <span class="req">*</span></label><input type="email" name="email" autocomplete="email" required><div class="err">Please enter a valid email.</div></div>
         </div>
         <div class="field-row">
-          <div class="field" data-field="business"><label>Business / property name <span class="req">*</span></label><input type="text" name="business" required><div class="err">Please enter your business name.</div></div>
-          <div class="field" data-field="phone"><label>Phone (optional)</label><input type="tel" name="phone" autocomplete="tel"></div>
+          <div class="field" data-field="business"><label>Business / property name <span class="req">*</span></label><input type="text" name="business" autocomplete="organization" required><div class="err">Please enter your business name.</div></div>
+          <div class="field" data-field="phone"><label>Contact number <span class="req">*</span></label><input type="tel" name="phone" autocomplete="tel" required><div class="err">Please enter a contact number.</div></div>
         </div>
+        <p class="consent-note">We use these details only to get back to you about the pilot, on the basis of the steps you're taking to enter an agreement with us. See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
         <button type="submit" class="btn btn-solid btn-block">Request a call <span aria-hidden="true">→</span></button>
       </form>
     </div>
@@ -993,7 +1006,7 @@
     <div data-mstep="result-nonuk">
       <span class="result-badge badge-soft">● UK only, for now</span>
       <h2 class="r-title">We're validating the UK market first.</h2>
-      <p class="r-body">Until that pilot is proven, we're not onboarding operators outside the UK — so an application right now would just sit unread. That's not a reflection on your operation.</p>
+      <p class="r-body">Until that pilot is proven, we're not onboarding operators outside the UK, so an application right now would just sit unread. That's not a reflection on your operation.</p>
       <p class="fine">Leave your email and we'll let you know the moment we open up further.</p>
       <div id="waitlistForm-nonuk"></div>
     </div>
@@ -1008,21 +1021,22 @@
           <div class="field" data-field="email"><label>Work email <span class="req">*</span></label><input type="email" name="email" autocomplete="email" required><div class="err">Please enter a valid email.</div></div>
         </div>
         <div class="field-row">
-          <div class="field" data-field="business"><label>Business / property name <span class="req">*</span></label><input type="text" name="business" required><div class="err">Please enter your business name.</div></div>
-          <div class="field" data-field="phone"><label>Phone (optional)</label><input type="tel" name="phone" autocomplete="tel"></div>
+          <div class="field" data-field="business"><label>Business / property name <span class="req">*</span></label><input type="text" name="business" autocomplete="organization" required><div class="err">Please enter your business name.</div></div>
+          <div class="field" data-field="phone"><label>Contact number <span class="req">*</span></label><input type="tel" name="phone" autocomplete="tel" required><div class="err">Please enter a contact number.</div></div>
         </div>
-        <div class="field" data-field="city"><label>City / region <span class="req">*</span></label><input type="text" name="city" required><div class="err">Please enter your city or region.</div></div>
+        <div class="field" data-field="city"><label>City / region <span class="req">*</span></label><input type="text" name="city" autocomplete="address-level2" required><div class="err">Please enter your city or region.</div></div>
         <div class="field"><label>Anything we should know before we call? (optional)</label><textarea name="notes" placeholder="e.g. specific properties you'd want to pilot with, timing constraints..."></textarea></div>
+        <p class="consent-note">We use these details only to review your application and get back to you, on the basis of the steps you're taking to enter an agreement with us. See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
         <button type="submit" class="btn btn-solid btn-block">Submit application <span aria-hidden="true">→</span></button>
       </form>
     </div>
 
     <div data-mstep="success-apply">
       <span class="result-badge badge-good">● Application ready</span>
-      <h2 class="r-title">One step left — send the email.</h2>
+      <h2 class="r-title">One step left: send the email.</h2>
       <p class="r-body">We've opened your email app with everything filled in. Just hit send. If nothing opened, copy the details below into an email to <strong>hello@thebutlr.com</strong>.</p>
       <div class="success-steps">
-        <div class="s"><span class="n">1</span> We review it personally — usually within 2 business days.</div>
+        <div class="s"><span class="n">1</span> We review it personally, usually within 2 business days.</div>
         <div class="s"><span class="n">2</span> A short call to confirm the pilot scope and your properties.</div>
         <div class="s"><span class="n">3</span> We onboard your first property and the 1-month pilot clock starts.</div>
       </div>
@@ -1035,10 +1049,10 @@
 
     <div data-mstep="success-big">
       <span class="result-badge badge-good">● Call request sent</span>
-      <h2 class="r-title">One step left — send the email.</h2>
+      <h2 class="r-title">One step left: send the email.</h2>
       <p class="r-body">We've opened your email app with everything filled in. Just hit send. If nothing opened, copy the details below into an email to <strong>hello@thebutlr.com</strong>.</p>
       <div class="success-steps">
-        <div class="s"><span class="n">1</span> We review it personally — usually within 1 business day.</div>
+        <div class="s"><span class="n">1</span> We review it personally, usually within 1 business day.</div>
         <div class="s"><span class="n">2</span> A short call to scope a pilot that fits your portfolio.</div>
       </div>
       <div class="actions"><a class="btn btn-solid" id="resendBigLink" href="#" target="_blank" rel="noopener">Open email again <span aria-hidden="true">→</span></a></div>
@@ -1050,7 +1064,7 @@
 
     <div data-mstep="success-waitlist">
       <span class="result-badge badge-good">● Noted</span>
-      <h2 class="r-title">Got it — you're on the list.</h2>
+      <h2 class="r-title">Got it, you're on the list.</h2>
       <p class="r-body">We've opened your email app with a short note to us. Send it and we'll keep you posted; no spam, just the update you asked for.</p>
       <div class="actions"><a class="btn btn-solid" id="resendWaitlistLink" href="#" target="_blank" rel="noopener">Open email again <span aria-hidden="true">→</span></a></div>
       <div class="copy-box">
@@ -1065,34 +1079,59 @@
 <script>
 (function(){
   var RECIPIENT = "hello@thebutlr.com";
-  var answers = {country:null, units:null, pms:null, pain:null, channels:null, readiness:null, budget:null};
+  var answers = {country:null, units:null, source:null, pms:null, pain:null, channels:null};
   var overlay = document.getElementById("modalOverlay");
+
+  var modalDialog = overlay.querySelector(".modal");
+  var lastFocusedBeforeModal = null;
+
+  function focusableInModal(){
+    return Array.prototype.slice.call(modalDialog.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )).filter(function(el){ return el.offsetParent !== null; });
+  }
+
+  function trapTabKey(e){
+    if(e.key !== "Tab") return;
+    var items = focusableInModal();
+    if(!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
 
   window.openModal = function(){
     // reset quiz state on every open so a retake never carries stale
     // answers from a prior attempt (e.g. an early-exit path skipped
     // questions whose old values would otherwise leak into a new
     // waitlist/application email body).
-    answers = {country:null, units:null, pms:null, pain:null, channels:null, readiness:null, budget:null};
+    answers = {country:null, units:null, source:null, pms:null, pain:null, channels:null};
     document.querySelectorAll(".option.selected").forEach(function(el){ el.classList.remove("selected"); });
+    lastFocusedBeforeModal = document.activeElement;
     overlay.classList.add("open");
     goTo("q1");
+    document.addEventListener("keydown", trapTabKey, true);
+    var items = focusableInModal();
+    if(items.length) items[0].focus();
   };
   window.closeModal = function(){
     overlay.classList.remove("open");
+    document.removeEventListener("keydown", trapTabKey, true);
+    if(lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === "function"){
+      lastFocusedBeforeModal.focus();
+    }
   };
   overlay.addEventListener("click", function(e){ if(e.target === overlay) closeModal(); });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && overlay.classList.contains("open")) closeModal(); });
 
   function labelFor(q, v){
     var map = {
       country:{uk:"United Kingdom", other:"Outside the UK"},
       units:{"1-2":"1–2 units","3-10":"3–10 units","11-20":"11–20 units","21-50":"21–50 units","50+":"50+ units"},
-      pms:{guesty:"Guesty", hostaway:"Hostaway", lodgify:"Lodgify", smoobu:"Smoobu", eviivo:"eviivo", "other-pms":"A different PMS not listed here", none:"No PMS — spreadsheets / manual"},
+      source:{linkedin:"LinkedIn", "facebook-group":"A Facebook group for operators", "social-short-form":"Instagram or TikTok", search:"Google search", directory:"A software directory or review site", referral:"Someone recommended it", "direct-outreach":"You reached out directly", "other-source":"Somewhere else"},
+      pms:{guesty:"Guesty", hostaway:"Hostaway", lodgify:"Lodgify", smoobu:"Smoobu", eviivo:"eviivo", "other-pms":"A different PMS not listed here", none:"No PMS (spreadsheets / manual)"},
       pain:{"repeat-questions":"Repeat guest questions","catch-issues":"Catching issues before reviews","upsell":"Spotting upsell opportunities","visibility":"Visibility across properties","mix":"A bit of everything"},
-      channels:{whatsapp:"Mostly WhatsApp/SMS", email:"Mostly email", platform:"Mostly Airbnb/Booking.com", all:"A mix across all of the above"},
-      readiness:{week:"This week", fortnight:"Within 2 weeks", month:"Within a month", exploring:"Just exploring"},
-      budget:{"under-15":"Under £15 per unit, per month", "15-25":"£15–25 per unit, per month", "25-40":"£25–40 per unit, per month", "40-plus":"£40+ per unit, per month", "no-idea":"No idea — tell me"}
+      channels:{whatsapp:"Mostly WhatsApp/SMS", email:"Mostly email", platform:"Mostly Airbnb/Booking.com", all:"A mix across all of the above"}
     };
     return (map[q] && map[q][v]) || v;
   }
@@ -1128,10 +1167,9 @@
       if(answers.units === "1-2"){ showResult(); return; }
       goTo("q3"); return;
     }
-    var map = {pms:"q4", pain:"q5", channels:"q6"};
+    var map = {source:"q4", pms:"q5", pain:"q6"};
     if(map[q]){ goTo(map[q]); return; }
-    if(q === "readiness"){ goTo("q7"); return; }
-    if(q === "budget"){ showResult(); }
+    if(q === "channels"){ showResult(); }
   }
 
   function classify(){
@@ -1145,11 +1183,10 @@
     target.innerHTML =
       row("Location", labelFor("country", answers.country)) +
       row("Units", labelFor("units", answers.units)) +
+      row("Heard about us via", labelFor("source", answers.source)) +
       row("Booking system", labelFor("pms", answers.pms)) +
       row("Biggest pain", labelFor("pain", answers.pain)) +
-      row("Main guest channel", labelFor("channels", answers.channels)) +
-      row("Ready to onboard", labelFor("readiness", answers.readiness)) +
-      row("Budget expectation", labelFor("budget", answers.budget));
+      row("Main guest channel", labelFor("channels", answers.channels));
   }
   function row(k,v){ return '<li><span class="k">'+k+'</span><span class="v">'+v+'</span></li>'; }
 
@@ -1160,11 +1197,10 @@
     var rows = [
       ["Location", "country", answers.country],
       ["Units managed", "units", answers.units],
+      ["Heard about us via", "source", answers.source],
       ["Booking system", "pms", answers.pms],
       ["Biggest current pain", "pain", answers.pain],
-      ["Main guest channel", "channels", answers.channels],
-      ["Ready to onboard", "readiness", answers.readiness],
-      ["Budget expectation", "budget", answers.budget]
+      ["Main guest channel", "channels", answers.channels]
     ];
     return rows
       .filter(function(r){ return r[2] !== null && r[2] !== undefined; })
@@ -1223,7 +1259,8 @@
     var container = document.getElementById(containerId);
     container.innerHTML =
       '<div class="field" data-field="wname"><label>Name</label><input type="text" id="'+containerId+'-name"></div>'+
-      '<div class="field" data-field="wemail"><label>Email <span class="req">*</span></label><input type="email" id="'+containerId+'-email"><div class="err">Please enter a valid email.</div></div>'+
+      '<div class="field" data-field="wemail"><label>Email <span class="req">*</span></label><input type="email" id="'+containerId+'-email" autocomplete="email"><div class="err">Please enter a valid email.</div></div>'+
+      '<p class="consent-note">We\'ll only use this to email you when there\'s an update. See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>'+
       '<button type="button" class="btn btn-solid btn-block" id="'+containerId+'-submit">Join the waitlist <span aria-hidden="true">→</span></button>';
 
     document.getElementById(containerId+"-submit").addEventListener("click", function(){
@@ -1249,7 +1286,7 @@
   var applyForm = document.getElementById("applyForm");
   applyForm.addEventListener("submit", function(e){
     e.preventDefault();
-    var fields = ["name","email","business","city"];
+    var fields = ["name","email","business","phone","city"];
     var ok = true; var values = {};
     fields.forEach(function(f){
       var input = applyForm.querySelector('[name="'+f+'"]');
@@ -1260,14 +1297,13 @@
       wrap.classList.toggle("invalid", !valid);
       if(!valid) ok = false;
     });
-    values.phone = applyForm.querySelector('[name="phone"]').value.trim();
     values.notes = applyForm.querySelector('[name="notes"]').value.trim();
     if(!ok) return;
 
     var subject = "Pilot application - " + values.business;
     var body = "Hi Butlr™ team,\n\nI'd like to apply for the founding partner pilot.\n\n" +
       "Name: " + values.name + "\n" + "Email: " + values.email + "\n" +
-      "Business: " + values.business + "\n" + "Phone: " + (values.phone || "-") + "\n" +
+      "Business: " + values.business + "\n" + "Phone: " + values.phone + "\n" +
       "City/region: " + values.city + "\n\n" + buildAnswerBlock() + "\n\n" +
       "Notes: " + (values.notes || "-") + "\n";
 
@@ -1286,7 +1322,7 @@
   var bigForm = document.getElementById("bigForm");
   bigForm.addEventListener("submit", function(e){
     e.preventDefault();
-    var fields = ["name","email","business"];
+    var fields = ["name","email","business","phone"];
     var ok = true; var values = {};
     fields.forEach(function(f){
       var input = bigForm.querySelector('[name="'+f+'"]');
@@ -1297,13 +1333,12 @@
       wrap.classList.toggle("invalid", !valid);
       if(!valid) ok = false;
     });
-    values.phone = bigForm.querySelector('[name="phone"]').value.trim();
     if(!ok) return;
 
     var subject = "Discovery call request - " + labelFor("units", answers.units);
     var body = "Hi Butlr™ team,\n\nI'd like to talk about a pilot at scale.\n\n" +
       "Name: " + values.name + "\n" + "Email: " + values.email + "\n" +
-      "Business: " + values.business + "\n" + "Phone: " + (values.phone || "-") + "\n\n" +
+      "Business: " + values.business + "\n" + "Phone: " + values.phone + "\n\n" +
       buildAnswerBlock() + "\n";
 
     var link = mailto(subject, body);
@@ -1338,9 +1373,9 @@
     if(!guestEl || !avaEl || !typingEl || !tagEl) return;
 
     var scenes = [
-      { tag:"Instant Answers", q:"How do I get into the building after hours?", a:"There's a keypad by the side entrance — code is 4471. Take the lift to the 2nd floor, your unit's on the left." },
-      { tag:"Guest Requests", q:"Could we get an extra set of towels?", a:"On it — housekeeping will drop them by within the hour." },
-      { tag:"Revenue Capture", q:"What time's checkout tomorrow?", a:"11am as standard — I can hold your room until 2pm for £15 and add it straight to your stay, if that's easier. Want me to?" },
+      { tag:"Instant Answers", q:"How do I get into the building after hours?", a:"There's a keypad by the side entrance, code is 4471. Take the lift to the 2nd floor, your unit's on the left." },
+      { tag:"Guest Requests", q:"Could we get an extra set of towels?", a:"On it, housekeeping will drop them by within the hour." },
+      { tag:"Revenue Capture", q:"What time's checkout tomorrow?", a:"11am as standard, I can hold your room until 2pm for £15 and add it straight to your stay, if that's easier. Want me to?" },
       { tag:"Local Recommendations", q:"Any good places to eat nearby?", a:"The Anchor on Mill Street does a great Sunday roast, five minutes' walk. Want me to book a table?" }
     ];
 
@@ -1468,6 +1503,240 @@
       splashEl.style.visibility = "hidden";
       splashEl.style.pointerEvents = "none";
     }, 5300);
+  }
+})();
+</script>
+
+<!-- ================= Cookie consent (self-hosted, no third-party script) ================= -->
+<style>
+  .cc-banner{
+    position:fixed; left:0; right:0; bottom:0; z-index:2000;
+    background:var(--bg); border-top:1px solid var(--border-strong);
+    box-shadow:0 -6px 24px rgba(8,48,29,0.12);
+    padding:18px 0; padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px));
+  }
+  .cc-banner[hidden]{display:none;}
+  .cc-banner-inner{
+    max-width:1120px; margin:0 auto; padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+  }
+  .cc-banner-inner p{margin:0; font-size:13.5px; line-height:1.55; color:var(--fg); max-width:640px;}
+  .cc-banner-inner a{color:var(--primary-glow); text-decoration:underline;}
+  .cc-banner-actions{display:flex; gap:10px; flex-wrap:wrap;}
+  .cc-btn{padding:10px 18px; font-size:13.5px; white-space:nowrap;}
+  .cc-btn.btn-outline-dark{background:transparent; color:var(--primary); border:1.3px solid rgba(8,48,29,0.55); font-weight:600;}
+  .cc-btn.btn-outline-dark:hover{background:var(--secondary);}
+  .cc-btn:focus-visible{outline:2px solid var(--primary); outline-offset:2px;}
+
+  .cc-modal-overlay{
+    position:fixed; inset:0; z-index:2100; background:rgba(8,48,29,0.45);
+    display:flex; align-items:center; justify-content:center; padding:20px;
+  }
+  .cc-modal-overlay[hidden]{display:none;}
+  .cc-modal{
+    background:#fff; border-radius:var(--radius-lg); max-width:480px; width:100%;
+    max-height:88vh; overflow-y:auto; padding:28px 26px; position:relative;
+  }
+  .cc-modal h2{font-size:1.2rem; margin:0 0 10px;}
+  .cc-modal > p{font-size:13.5px; color:var(--muted); line-height:1.55; margin:0 0 20px;}
+  .cc-category{border-top:1px solid var(--border); padding:16px 0;}
+  .cc-category-head{display:flex; align-items:center; justify-content:space-between; gap:12px;}
+  .cc-category-name{font-size:14.5px; font-weight:600;}
+  .cc-category-desc{font-size:13px; color:var(--muted); margin:6px 0 0; line-height:1.5;}
+  .cc-toggle{
+    flex:none; width:42px; height:24px; border-radius:var(--radius-full); border:1.3px solid rgba(8,48,29,0.55);
+    background:#778d83; position:relative; cursor:pointer; padding:0; transition:background .15s ease;
+  }
+  .cc-toggle-dot{
+    position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%;
+    background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.3); transition:transform .15s ease;
+  }
+  .cc-toggle[aria-checked="true"]{background:var(--primary);}
+  .cc-toggle[aria-checked="true"] .cc-toggle-dot{transform:translateX(18px);}
+  .cc-toggle-locked{cursor:default; background:var(--primary);}
+  .cc-toggle-locked .cc-toggle-dot{transform:translateX(18px);}
+  .cc-toggle:focus-visible{outline:2px solid var(--primary); outline-offset:2px;}
+  .cc-modal-actions{display:flex; gap:10px; justify-content:flex-end; margin-top:22px; flex-wrap:wrap;}
+  @media (max-width:640px){
+    .cc-banner-inner{flex-direction:column; align-items:stretch; text-align:left;}
+    .cc-banner-actions{justify-content:flex-start;}
+  }
+</style>
+
+<div class="cc-banner" id="ccBanner" role="region" aria-label="Cookie choices" hidden>
+  <div class="cc-banner-inner">
+    <p id="ccBannerText">We use strictly necessary cookies to run this site, and, only with your permission, Google Analytics to understand how it's used. Non-essential cookies stay off until you say yes. <a href="/cookie-policy.html">Cookie Policy</a></p>
+    <div class="cc-banner-actions">
+      <button type="button" class="btn cc-btn btn-outline-dark" id="ccManageBtn">Manage preferences</button>
+      <button type="button" class="btn cc-btn btn-outline-dark" id="ccRejectBtn">Reject non-essential</button>
+      <button type="button" class="btn cc-btn btn-solid" id="ccAcceptBtn">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<div class="cc-modal-overlay" id="ccPrefsOverlay" hidden>
+  <div class="cc-modal" role="dialog" aria-modal="true" aria-labelledby="ccPrefsTitle">
+    <button type="button" class="modal-close" id="ccPrefsCloseBtn" aria-label="Close cookie preferences">✕</button>
+    <h2 id="ccPrefsTitle">Cookie preferences</h2>
+    <p>Choose which cookies you're happy for us to set. You can change this any time from "Cookie settings" in the footer.</p>
+    <div class="cc-category">
+      <div class="cc-category-head">
+        <span class="cc-category-name" id="ccNecessaryLabel">Strictly necessary</span>
+        <span class="cc-toggle cc-toggle-locked" role="switch" aria-checked="true" aria-labelledby="ccNecessaryLabel" aria-disabled="true"><span class="cc-toggle-dot"></span></span>
+      </div>
+      <p class="cc-category-desc">Needed to run the site and remember your cookie choice. Always on, and can't be switched off.</p>
+    </div>
+    <div class="cc-category">
+      <div class="cc-category-head">
+        <span class="cc-category-name" id="ccAnalyticsLabel">Analytics (Google Analytics)</span>
+        <button type="button" class="cc-toggle" id="ccAnalyticsToggle" role="switch" aria-checked="false" aria-labelledby="ccAnalyticsLabel"><span class="cc-toggle-dot"></span></button>
+      </div>
+      <p class="cc-category-desc">Helps us understand how visitors use this site. Sets a Google Analytics identifier. Off until you turn it on.</p>
+    </div>
+    <div class="cc-modal-actions">
+      <button type="button" class="btn cc-btn btn-outline-dark" id="ccRejectAllBtn">Reject all</button>
+      <button type="button" class="btn cc-btn btn-solid" id="ccSavePrefsBtn">Save preferences</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY = "butlr_consent_v1";
+  var banner = document.getElementById("ccBanner");
+  var prefsOverlay = document.getElementById("ccPrefsOverlay");
+  var prefsModal = prefsOverlay.querySelector(".cc-modal");
+  var analyticsToggle = document.getElementById("ccAnalyticsToggle");
+  var lastFocusBeforePrefs = null;
+
+  function getSaved(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ return null; }
+  }
+  function save(analyticsAllowed){
+    var record = { necessary:true, analytics:!!analyticsAllowed, decidedAt:new Date().toISOString(), version:1 };
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(record)); }catch(e){ /* storage unavailable; banner will just re-show next visit */ }
+    return record;
+  }
+
+  // Activate every gated script for a given category: swap type="text/plain"
+  // for a real script type and (for external scripts) move data-src to src,
+  // so the browser only ever fetches/executes it after consent.
+  function activateCategory(cat){
+    var olds = document.querySelectorAll('script[type="text/plain"][data-category="' + cat + '"]');
+    olds.forEach(function(oldScript){
+      var s = document.createElement("script");
+      for (var i = 0; i < oldScript.attributes.length; i++){
+        var attr = oldScript.attributes[i];
+        if(attr.name === "type") continue;
+        if(attr.name === "data-src"){ s.setAttribute("src", attr.value); continue; }
+        s.setAttribute(attr.name, attr.value);
+      }
+      if(!oldScript.hasAttribute("data-src") && oldScript.textContent){ s.text = oldScript.textContent; }
+      oldScript.parentNode.replaceChild(s, oldScript);
+    });
+  }
+
+  function applyRecord(record){
+    if(record && record.analytics) activateCategory("analytics");
+  }
+
+  function hideBanner(){ banner.hidden = true; }
+  function showBanner(){ banner.hidden = false; }
+
+  function trapFocus(container){
+    return function(e){
+      if(e.key !== "Tab") return;
+      var items = Array.prototype.slice.call(container.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter(function(el){ return el.offsetParent !== null; });
+      if(!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    };
+  }
+  var trapBanner = trapFocus(banner);
+  var trapPrefs = trapFocus(prefsModal);
+
+  function openPrefs(isFirstVisit){
+    var current = getSaved();
+    analyticsToggle.setAttribute("aria-checked", current && current.analytics ? "true" : "false");
+    lastFocusBeforePrefs = document.activeElement;
+    prefsOverlay.hidden = false;
+    // On a first-ever visit (no decision made yet) we don't show a close/X
+    // or allow Escape-dismiss: PECR doesn't treat an unexplained dismissal
+    // as a valid choice, so we require Accept/Reject/Save instead.
+    document.getElementById("ccPrefsCloseBtn").style.display = isFirstVisit ? "none" : "";
+    document.addEventListener("keydown", prefsKeydown, true);
+    document.getElementById("ccAnalyticsToggle").focus();
+  }
+  function closePrefs(){
+    prefsOverlay.hidden = true;
+    document.removeEventListener("keydown", prefsKeydown, true);
+    if(lastFocusBeforePrefs && typeof lastFocusBeforePrefs.focus === "function") lastFocusBeforePrefs.focus();
+  }
+  function prefsKeydown(e){
+    trapPrefs(e);
+    if(e.key === "Escape" && document.getElementById("ccPrefsCloseBtn").style.display !== "none") closePrefs();
+  }
+
+  analyticsToggle.addEventListener("click", function(){
+    var checked = analyticsToggle.getAttribute("aria-checked") === "true";
+    analyticsToggle.setAttribute("aria-checked", checked ? "false" : "true");
+  });
+
+  document.getElementById("ccAcceptBtn").addEventListener("click", function(){
+    var record = save(true);
+    applyRecord(record);
+    hideBanner();
+  });
+  document.getElementById("ccRejectBtn").addEventListener("click", function(){
+    save(false);
+    hideBanner();
+  });
+  document.getElementById("ccManageBtn").addEventListener("click", function(){
+    openPrefs(!getSaved());
+  });
+  document.getElementById("ccRejectAllBtn").addEventListener("click", function(){
+    save(false);
+    closePrefs();
+    hideBanner();
+  });
+  document.getElementById("ccSavePrefsBtn").addEventListener("click", function(){
+    var allowAnalytics = analyticsToggle.getAttribute("aria-checked") === "true";
+    var record = save(allowAnalytics);
+    applyRecord(record);
+    closePrefs();
+    hideBanner();
+  });
+  document.getElementById("ccPrefsCloseBtn").addEventListener("click", closePrefs);
+  prefsOverlay.addEventListener("click", function(e){
+    if(e.target === prefsOverlay && document.getElementById("ccPrefsCloseBtn").style.display !== "none") closePrefs();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Tab" && !banner.hidden) trapBanner(e);
+  }, true);
+
+  // "Cookie settings" link in the footer, usable at any time to change or
+  // withdraw consent exactly as easily as it was given.
+  window.ButlrConsent = {
+    open: function(){ openPrefs(false); }
+  };
+
+  var existing = getSaved();
+  if(existing){
+    applyRecord(existing);
+  } else {
+    showBanner();
+  }
+
+  // Lets other pages (e.g. the Cookie Policy) link straight to
+  // "#cookie-settings" and have this reopen preferences on arrival.
+  if(window.location.hash === "#cookie-settings"){
+    openPrefs(!existing);
   }
 })();
 </script>

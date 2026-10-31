@@ -7,6 +7,11 @@
 <meta name="description" content="Terms of Use for The Butlr, the AI concierge and operator intelligence platform for short-term rental and serviced accommodation businesses.">
 <title>Terms of Use — The Butlr</title>
 <style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url("/assets/fonts/inter-300.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/inter-400.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/inter-500.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/inter-600.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/inter-700.woff") format("woff");}
   :root{
     --primary:#08301d;
     --primary-glow:#115f3b;
@@ -70,11 +75,14 @@
   .foot-note{font-size:13px; color:var(--muted); font-style:italic; margin-top:28px;}
 
   footer{background:var(--primary); color:rgba(255,255,255,0.7); padding:26px 0; font-size:13px;}
-  footer .wrap{display:flex; justify-content:space-between; align-items:center;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  footer nav{display:flex; gap:16px; flex-wrap:wrap;}
   footer a{color:rgba(255,255,255,0.7); text-decoration:none;}
   footer a:hover{text-decoration:underline;}
+  footer a:focus-visible{outline:2px solid #fff; outline-offset:2px;}
   @media (max-width:600px){
     footer .wrap{flex-direction:column; gap:8px; text-align:center;}
+    footer nav{justify-content:center;}
   }
 </style>
 </head>
@@ -127,10 +135,10 @@
     <p>This website, the Platform, its software and design, and the names "The Butlr" and "Ava", remain the property of The Butlr Concierge Ltd or our licensors. A Client receives a limited right to use the Platform for its own accommodation business; nothing here grants a right to copy, resell, sublicense, or create derivative products from it.</p>
 
     <h2><span class="num">9.</span>Confidentiality</h2>
-    <p>In the course of a beta partnership, both sides may share information that isn't public — product plans, pricing, operational data, feedback. Each party agrees to keep the other's confidential information private and to use it only for the purposes of the partnership, except where disclosure is required by law.</p>
+    <p>In the course of a beta partnership, both sides may share information that isn't public: product plans, pricing, operational data, feedback. Each party agrees to keep the other's confidential information private and to use it only for the purposes of the partnership, except where disclosure is required by law.</p>
 
     <h2><span class="num">10.</span>Data and privacy</h2>
-    <p>Personal data is handled as described in our <a href="/privacy">Privacy Policy</a>, which forms part of these Terms. A Data Processing Agreement is available on request before any Client signs on.</p>
+    <p>Personal data is handled as described in our <a href="/privacy.html">Privacy Policy</a>, which forms part of these Terms. A Data Processing Agreement is available on request before any Client signs on.</p>
 
     <h2><span class="num">11.</span>No warranty</h2>
     <p>The website and the Platform are provided on an "as is" and "as available" basis during this beta phase. Beyond what is expressly agreed in a Client's individual beta agreement, we do not warrant that the Platform will be error-free, uninterrupted, or fit for any particular purpose, and we make no warranty about the accuracy of Ava's responses or of data drawn from third-party systems.</p>
@@ -183,8 +191,13 @@
 
 <footer>
   <div class="wrap">
-    <span>© The Butlr™</span>
-    <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+    <span>© 2026 The Butlr™</span>
+    <nav aria-label="Legal pages">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/cookie-policy.html">Cookie Policy</a>
+      <a href="/accessibility.html">Accessibility</a>
+      <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+    </nav>
   </div>
 </footer>
 

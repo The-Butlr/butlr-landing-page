@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thebutlr.com/accessibility.html">
+<title>Accessibility Statement — The Butlr</title>
+<meta name="description" content="Accessibility statement for thebutlr.com: our target standard, what we've checked, known issues, and how to tell us about a problem.">
+<style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url("/assets/fonts/inter-300.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/inter-400.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/inter-500.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/inter-600.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/inter-700.woff") format("woff");}
+  :root{
+    --primary:#08301d;
+    --primary-glow:#115f3b;
+    --bg:#ffffff;
+    --bg-alt:#f7f9f8;
+    --border:rgba(8,48,29,0.12);
+    --fg:#0a1f14;
+    --muted:rgba(8,48,29,0.66);
+    --warn-bg:#fdf6e8;
+    --warn-border:rgba(154,105,0,0.25);
+    --warn-fg:#6b4a00;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:var(--bg);
+    color:var(--fg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--primary-glow);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--primary); outline-offset:2px;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  nav.topnav{background:var(--primary); padding:18px 0;}
+  nav.topnav .wrap{display:flex; align-items:center; justify-content:space-between;}
+  nav.topnav a.brand{color:#fff; font-weight:700; font-size:17px; text-decoration:none;}
+  nav.topnav a.back{color:rgba(255,255,255,0.8); font-size:13.5px; text-decoration:none;}
+  nav.topnav a.back:hover{text-decoration:underline;}
+  main{padding:48px 0 64px;}
+  .doc-header{margin-bottom:28px; padding-bottom:24px; border-bottom:1px solid var(--border);}
+  h1{font-size:26px; font-weight:700; margin:0 0 6px; letter-spacing:-0.02em;}
+  .entity{font-size:15px; color:var(--muted); margin:0;}
+  .effective{font-size:13.5px; color:var(--muted); margin:6px 0 0;}
+  h2{font-size:17px; font-weight:700; margin:36px 0 10px; letter-spacing:-0.01em;}
+  h2 .num{color:var(--primary-glow); margin-right:6px;}
+  p{margin:0 0 14px; font-size:15px; color:var(--fg);}
+  ul{margin:0 0 14px; padding-left:22px;}
+  li{margin-bottom:6px; font-size:15px;}
+  strong{font-weight:600;}
+  .status-box{
+    background:var(--warn-bg); border:1px solid var(--warn-border); color:var(--warn-fg);
+    border-radius:12px; padding:16px 18px; margin:0 0 24px; font-size:14px; line-height:1.55;
+  }
+  .status-box strong{display:block; font-size:12.5px; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;}
+  .contact-block{background:var(--bg-alt); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-top:8px;}
+  .contact-block p{margin:0 0 6px; font-size:14.5px;}
+  .contact-block p:last-child{margin-bottom:0;}
+  .foot-note{font-size:13px; color:var(--muted); font-style:italic; margin-top:28px;}
+  footer{background:var(--primary); color:rgba(255,255,255,0.7); padding:26px 0; font-size:13px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  footer nav{display:flex; gap:16px; flex-wrap:wrap;}
+  footer a{color:rgba(255,255,255,0.7); text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  footer a:focus-visible{outline:2px solid #fff; outline-offset:2px;}
+  @media (max-width:600px){
+    footer .wrap{flex-direction:column; gap:8px; text-align:center;}
+    footer nav{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <a class="brand" href="/">The Butlr™</a>
+    <a class="back" href="/">← Back to site</a>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <div class="doc-header">
+      <h1>Accessibility Statement</h1>
+      <p class="entity">thebutlr.com (marketing website)</p>
+      <p class="effective">Last reviewed: 17 October 2026</p>
+    </div>
+
+    <div class="status-box">
+      <strong>Current status</strong>
+      This is a self-assessment by our own team, not an independent accredited audit. We believe this site is largely usable with a keyboard and screen reader and meets most of WCAG 2.2 AA, but we know of specific gaps, listed below, that we're still working through.
+    </div>
+
+    <h2><span class="num">1.</span>Our commitment</h2>
+    <p>We want this website to be usable by as many people as possible, including people who use a keyboard only, a screen reader, voice control, or who need larger text, higher contrast, or reduced motion. We're targeting <strong>WCAG 2.2 at level AA</strong> as our standard.</p>
+
+    <h2><span class="num">2.</span>What we've checked and fixed</h2>
+    <ul>
+      <li>A visible "Skip to content" link for keyboard users, and a proper <code>&lt;main&gt;</code> landmark around the page's core content.</li>
+      <li>A visible focus style on every interactive element, including form fields (previously the default outline was removed without a visible replacement).</li>
+      <li>The eligibility quiz is operable by keyboard alone, keeps focus trapped inside it while open, and returns focus to the control that opened it when closed.</li>
+      <li>Decorative icons are hidden from screen readers (<code>aria-hidden</code>) so they don't add noise to the page's reading order.</li>
+      <li>Respect for <code>prefers-reduced-motion</code> across the page's animations.</li>
+      <li>Form fields use real, associated labels (not placeholder-only text), mark required fields in visible text, and use standard <code>autocomplete</code> attributes.</li>
+    </ul>
+
+    <h2><span class="num">3.</span>Known issues we're still working on</h2>
+    <ul>
+      <li>We've checked contrast on the main text and UI colour pairs used across the page, but have not yet completed an exhaustive, pixel-by-pixel check of every text-over-image or text-over-gradient area at every screen size.</li>
+      <li>The eligibility quiz has been tested for keyboard operability, but not yet end-to-end with a screen reader; step changes inside it are not currently announced automatically to assistive technology (no live region).</li>
+      <li>We have not yet completed a formal check of 200% browser zoom and 320px-wide reflow across every section of the page.</li>
+      <li>This statement, and the fixes behind it, have not yet been reviewed by an accredited third-party accessibility auditor.</li>
+    </ul>
+
+    <h2><span class="num">4.</span>Telling us about a problem</h2>
+    <p>If you find something on this site you can't access, or have feedback on its accessibility, please email us and we'll aim to respond within 5 working days.</p>
+
+    <h2><span class="num">5.</span>Enforcement</h2>
+    <p>If you're not happy with our response, you can contact the Equality Advisory and Support Service (EASS), or, for a UK GDPR / data-protection matter, the Information Commissioner's Office (ICO).</p>
+
+    <div class="contact-block">
+      <p><strong>Legal entity:</strong> The Butlr Concierge Ltd, trading as "The Butlr"</p>
+      <p><strong>Contact email:</strong> <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a></p>
+    </div>
+
+    <p class="foot-note">This statement will be updated as we complete further checks and fixes.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 The Butlr™</span>
+    <nav aria-label="Legal pages">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

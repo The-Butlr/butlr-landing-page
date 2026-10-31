@@ -6,10 +6,12 @@
 <title>Privacy Policy — The Butlr</title>
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thebutlr.com/privacy.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url("/assets/fonts/inter-300.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/inter-400.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/inter-500.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/inter-600.woff") format("woff");}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/inter-700.woff") format("woff");}
   :root{
     --primary:#08301d;
     --primary-glow:#115f3b;
@@ -68,11 +70,14 @@
   .foot-note{font-size:13px; color:var(--muted); font-style:italic; margin-top:28px;}
 
   footer{background:var(--primary); color:rgba(255,255,255,0.7); padding:26px 0; font-size:13px;}
-  footer .wrap{display:flex; justify-content:space-between; align-items:center;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  footer nav{display:flex; gap:16px; flex-wrap:wrap;}
   footer a{color:rgba(255,255,255,0.7); text-decoration:none;}
   footer a:hover{text-decoration:underline;}
+  footer a:focus-visible{outline:2px solid #fff; outline-offset:2px;}
   @media (max-width:600px){
     footer .wrap{flex-direction:column; gap:8px; text-align:center;}
+    footer nav{justify-content:center;}
   }
 </style>
 </head>
@@ -162,7 +167,7 @@
     <p>AI-assisted functionality is used to <strong>support</strong> guest communication and operational workflows and <strong>does not replace human oversight or decision-making where required</strong>.</p>
 
     <h2><span class="num">5.</span>Automated processing &amp; human review</h2>
-    <p>Some Platform processes — such as identity verification, check-in approval workflows, or access enablement — may involve <strong>automated or semi-automated processing</strong>.</p>
+    <p>Some Platform processes, such as identity verification, check-in approval workflows, or access enablement, may involve <strong>automated or semi-automated processing</strong>.</p>
     <p>Where such processing is used:</p>
     <ul>
       <li>Appropriate safeguards are in place</li>
@@ -222,14 +227,23 @@
     <h2><span class="num">13.</span>Changes to this policy</h2>
     <p>This Privacy Policy may be updated during the beta period. Any material changes will be versioned and made available to Clients. Continued use of the Platform constitutes acknowledgment of the updated Policy.</p>
 
-    <h2><span class="num">14.</span>Contact details</h2>
+    <h2><span class="num">14.</span>This website (outside the Platform)</h2>
+    <p>Everything above concerns the Platform used by our Clients. This section explains, separately, how <strong>The Butlr Concierge Ltd</strong> processes personal data as a <strong>Data Controller in its own right</strong> through this website, thebutlr.com.</p>
+    <p><strong>What we collect:</strong> if you use the eligibility quiz, the founding-partner application, the "request a call" form, or the waitlist sign-up on this site, we collect the name, email address, business name, phone number, city, and any notes you choose to give us. If you consent via the cookie banner, we also use Google Analytics (GA4), which involves a cookie-based identifier and technical data such as IP address and device/browser information.</p>
+    <p><strong>Why, and our lawful basis:</strong> we use enquiry and application data to respond to you and assess eligibility for our pilot programme, on the basis that this is necessary to take steps you've requested towards a contract with us (UK GDPR Art. 6(1)(b)), or our legitimate interest in replying to you where no contract follows (Art. 6(1)(f)). We use analytics data only once you've given consent via the cookie banner (Art. 6(1)(a)); you can withdraw this at any time from the "Cookie settings" link in the footer.</p>
+    <p><strong>Who we share it with:</strong> enquiry and application data is processed by <strong>Netlify, Inc.</strong> (our website- and form-hosting provider, based in the US) as our sub-processor, and is otherwise used only within The Butlr Concierge Ltd. Where you've consented to analytics, usage data is shared with <strong>Google</strong>, who process it under their own terms as an independent controller of that data.</p>
+    <p><strong>International transfers:</strong> Netlify and Google both process data outside the UK (in the US). Where this involves a transfer of your personal data, we rely on the UK's International Data Transfer Addendum to the EU Standard Contractual Clauses, or an equivalent recognised safeguard.</p>
+    <p><strong>Retention:</strong> we are finalising a specific retention period for website enquiry and application data; until published here, we keep it only for as long as needed to respond to you and run our pilot process, and delete or anonymise it on request. Analytics data follows Google Analytics' own retention settings unless we configure this differently.</p>
+    <p><strong>Your rights:</strong> for this website's own processing, you can exercise your UK GDPR rights (including access, rectification, erasure, and objection) by contacting <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>. You also have the right to complain to the ICO (see below).</p>
+
+    <h2><span class="num">15.</span>Contact details</h2>
     <p>For data protection enquiries relating to the Platform, Clients may contact:</p>
     <div class="contact-block">
       <p><strong>Legal entity:</strong> The Butlr Concierge Ltd, trading as "The Butlr"</p>
       <p><strong>ICO Registration:</strong> ZC071802</p>
       <p><strong>Company number:</strong> 16620604</p>
-      <p><strong>Registered office:</strong> 4 Mornington Villas, BD8 7HB</p>
-      <p><strong>Contact email:</strong> <a href="mailto:admin@thebutlr.com">admin@thebutlr.com</a></p>
+      <p><strong>Registered office:</strong> 4 Mornington Villas, Bradford, BD8 7HB</p>
+      <p><strong>Contact email:</strong> <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a></p>
     </div>
 
     <p class="foot-note">This Privacy Policy applies to the beta version of the Platform and does not override the Beta Test Agreement or Data Processing Agreement. You also have the right to lodge a complaint with the Information Commissioner's Office (ICO): <a href="https://www.ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a></p>
@@ -238,8 +252,13 @@
 
 <footer>
   <div class="wrap">
-    <span>© The Butlr™</span>
-    <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+    <span>© 2026 The Butlr™</span>
+    <nav aria-label="Legal pages">
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/cookie-policy.html">Cookie Policy</a>
+      <a href="/accessibility.html">Accessibility</a>
+      <a href="mailto:hello@thebutlr.com">hello@thebutlr.com</a>
+    </nav>
   </div>
 </footer>
 
